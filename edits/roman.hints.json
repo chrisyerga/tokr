@@ -173,6 +173,14 @@
       "end": 115
     },
     {
+      "id": "cool-crossout",
+      "generator": "CoolCrossout",
+      "mode": "overlay",
+      "match": ["maybe cool isn't the right word"],
+      "start": 150.7,
+      "end": 155.2
+    },
+    {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",

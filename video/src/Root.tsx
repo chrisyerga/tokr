@@ -10,6 +10,7 @@ import { ExoplanetTrio } from "./graphics/ExoplanetTrio";
 import { EarthEscape } from "./graphics/EarthEscape";
 import { NancyIntro } from "./graphics/NancyIntro";
 import { ScientistLifetime } from "./graphics/ScientistLifetime";
+import { CoolCrossout } from "./graphics/CoolCrossout";
 import { NancyGraceRoman } from "./graphics/title/NancyGraceRoman";
 import type { EditDoc, SubtitleChunk } from "./types";
 
@@ -181,6 +182,14 @@ export const RemotionRoot: React.FC = () => {
         id="ScientistLifetimePreview"
         component={ScientistLifetime}
         durationInFrames={630}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="CoolCrossoutPreview"
+        component={CoolCrossout}
+        durationInFrames={135}
         fps={30}
         width={1080}
         height={1920}

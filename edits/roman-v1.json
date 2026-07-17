@@ -286,6 +286,14 @@
       "params": {}
     },
     {
+      "id": "cool-crossout",
+      "generator": "CoolCrossout",
+      "mode": "overlay",
+      "start": 150.7,
+      "end": 155.2,
+      "params": {}
+    },
+    {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",
