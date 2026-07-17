@@ -6,6 +6,8 @@ import { SpySatellite } from "./graphics/SpySatellite";
 import { Spectroscopy } from "./graphics/Spectroscopy";
 import { Goldilocks } from "./graphics/flair/Goldilocks";
 import { TitleCard } from "./graphics/TitleCard";
+import { ExoplanetTrio } from "./graphics/ExoplanetTrio";
+import { EarthEscape } from "./graphics/EarthEscape";
 import type { EditDoc, SubtitleChunk } from "./types";
 
 const defaultStyle = {
@@ -121,6 +123,22 @@ export const RemotionRoot: React.FC = () => {
         id="TitleCardPreview"
         component={TitleCard}
         durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="ExoplanetTrioPreview"
+        component={ExoplanetTrio}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="EarthEscapePreview"
+        component={EarthEscape}
+        durationInFrames={210}
         fps={30}
         width={1080}
         height={1920}

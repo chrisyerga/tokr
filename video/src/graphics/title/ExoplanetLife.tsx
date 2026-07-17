@@ -16,7 +16,7 @@ const FIGURES: Figure[] = [
   { angleDeg: -90, popAt: 2.1, scale: 0.95, wave: true },
 ];
 
-const StickFigure: React.FC<{ wavePhase: number; waving: boolean }> = ({
+export const StickFigure: React.FC<{ wavePhase: number; waving: boolean }> = ({
   wavePhase,
   waving,
 }) => {
