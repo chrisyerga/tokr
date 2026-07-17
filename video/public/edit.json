@@ -16,6 +16,11 @@
       "duration": 11.68
     },
     {
+      "id": "IMG_7958",
+      "path": "roman-assets/IMG_7958.MOV",
+      "duration": 12.78
+    },
+    {
       "id": "IMG_7959",
       "path": "roman-assets/IMG_7959.MOV",
       "duration": 15.8
@@ -44,6 +49,11 @@
       "id": "IMG_7969",
       "path": "roman-assets/IMG_7969.MOV",
       "duration": 18.8
+    },
+    {
+      "id": "IMG_7972",
+      "path": "roman-assets/IMG_7972.MOV",
+      "duration": 21.2
     },
     {
       "id": "IMG_7973",
@@ -107,6 +117,13 @@
       "note": "So one of the gizmos that has this thing called a coronagraph, basically it's on"
     },
     {
+      "id": "c_IMG_7958",
+      "asset": "IMG_7958",
+      "srcIn": 0,
+      "srcOut": 11.96,
+      "note": "The sci-fi nerd in me likes to think about like, I don't know, a couple hundred"
+    },
+    {
       "id": "c_IMG_7959",
       "asset": "IMG_7959",
       "srcIn": 0,
@@ -147,6 +164,13 @@
       "srcIn": 0,
       "srcOut": 17.98,
       "note": "NRO doesn't have these same budget problems. They build a whole mess of them and"
+    },
+    {
+      "id": "c_IMG_7972",
+      "asset": "IMG_7972",
+      "srcIn": 0,
+      "srcOut": 20.38,
+      "note": "Of course, I'm irked because it's like, God, wouldn't it be great if we lived in"
     },
     {
       "id": "c_IMG_7973",
@@ -217,24 +241,24 @@
       "id": "spy-nro",
       "generator": "SpySatellite",
       "mode": "fullscreen",
-      "start": 78.1,
-      "end": 107.04,
+      "start": 97,
+      "end": 102,
       "params": {}
     },
     {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",
-      "start": 213.07,
-      "end": 242.15,
+      "start": 245.41,
+      "end": 274.49,
       "params": {}
     },
     {
       "id": "spectroscopy",
       "generator": "Spectroscopy",
       "mode": "fullscreen",
-      "start": 242.15,
-      "end": 268.23,
+      "start": 274.49,
+      "end": 300.57,
       "params": {}
     }
   ],

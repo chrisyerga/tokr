@@ -23,7 +23,6 @@ export const Final: React.FC<FinalProps> = ({ edit, subtitles, baseVideo }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <OffthreadVideo src={staticFile(baseVideo)} />
-
       {edit.overlays.map((overlay: Overlay) => {
         const from = Math.round(overlay.start * fps);
         const durationInFrames = Math.max(
@@ -38,9 +37,7 @@ export const Final: React.FC<FinalProps> = ({ edit, subtitles, baseVideo }) => {
           </Sequence>
         );
       })}
-
       <FlairLayer chunks={subtitles} />
-
       <AbsoluteFill style={{ zIndex: 10 }}>
         <KaraokeSubtitles chunks={subtitles} style={edit.subtitleStyle} />
       </AbsoluteFill>

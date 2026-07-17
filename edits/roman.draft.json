@@ -16,6 +16,11 @@
       "duration": 11.68
     },
     {
+      "id": "IMG_7958",
+      "path": "roman-assets/IMG_7958.MOV",
+      "duration": 12.78
+    },
+    {
       "id": "IMG_7959",
       "path": "roman-assets/IMG_7959.MOV",
       "duration": 15.8
@@ -110,6 +115,13 @@
       "srcIn": 0,
       "srcOut": 10.86,
       "note": "So one of the gizmos that has this thing called a coronagraph, basically it's on"
+    },
+    {
+      "id": "c_IMG_7958",
+      "asset": "IMG_7958",
+      "srcIn": 0,
+      "srcOut": 11.96,
+      "note": "The sci-fi nerd in me likes to think about like, I don't know, a couple hundred"
     },
     {
       "id": "c_IMG_7959",
@@ -229,24 +241,24 @@
       "id": "spy-nro",
       "generator": "SpySatellite",
       "mode": "fullscreen",
-      "start": 78.1,
-      "end": 107.04,
+      "start": 90.06,
+      "end": 119,
       "params": {}
     },
     {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",
-      "start": 233.45,
-      "end": 262.53,
+      "start": 245.41,
+      "end": 274.49,
       "params": {}
     },
     {
       "id": "spectroscopy",
       "generator": "Spectroscopy",
       "mode": "fullscreen",
-      "start": 262.53,
-      "end": 288.61,
+      "start": 274.49,
+      "end": 300.57,
       "params": {}
     }
   ],

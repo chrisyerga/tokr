@@ -31,8 +31,13 @@
     },
     {
       "id": "mission",
-      "mustInclude": ["Goldilocks", "sci-fi nerd"],
+      "mustInclude": ["Goldilocks"],
       "preferAssets": ["IMG_7959"]
+    },
+    {
+      "id": "nerd",
+      "mustInclude": ["sci-fi nerd"],
+      "preferAssets": ["IMG_7958"]
     },
     {
       "id": "pivot",
