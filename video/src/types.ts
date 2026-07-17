@@ -2,6 +2,8 @@ export type SubtitleWord = {
   text: string;
   start: number;
   end: number;
+  /** Name of a component in graphics/flair/registry (e.g. "Goldilocks"). */
+  flair?: string;
 };
 
 export type SubtitleChunk = {

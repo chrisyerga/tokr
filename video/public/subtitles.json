@@ -19,7 +19,7 @@
         "end": 1.1
       },
       {
-        "text": "space",
+        "text": "space-telescope",
         "start": 1.1,
         "end": 1.72
       }
@@ -29,11 +29,6 @@
     "start": 1.72,
     "end": 2.82,
     "words": [
-      {
-        "text": "telescope",
-        "start": 1.72,
-        "end": 2.2
-      },
       {
         "text": "to",
         "start": 2.2,
@@ -370,7 +365,8 @@
       {
         "text": "Goldilocks",
         "start": 20.78,
-        "end": 21.42
+        "end": 21.42,
+        "flair": "Goldilocks"
       },
       {
         "text": "zone",

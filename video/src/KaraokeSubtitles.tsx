@@ -55,7 +55,7 @@ export const KaraokeSubtitles: React.FC<Props> = ({ chunks, style }) => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          gap: "0.28em",
+          gap: "0.55em",
           maxWidth: "92%",
           transform: `scale(${enter})`,
           fontFamily: `"${style.fontFamily}", "Arial Black", Impact, sans-serif`,

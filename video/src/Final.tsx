@@ -7,6 +7,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { KaraokeSubtitles } from "./KaraokeSubtitles";
+import { FlairLayer } from "./FlairLayer";
 import { renderGraphic } from "./graphics/registry";
 import type { EditDoc, Overlay, SubtitleChunk } from "./types";
 
@@ -37,6 +38,8 @@ export const Final: React.FC<FinalProps> = ({ edit, subtitles, baseVideo }) => {
           </Sequence>
         );
       })}
+
+      <FlairLayer chunks={subtitles} />
 
       <AbsoluteFill style={{ zIndex: 10 }}>
         <KaraokeSubtitles chunks={subtitles} style={edit.subtitleStyle} />
