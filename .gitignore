@@ -1,0 +1,27 @@
+node_modules/
+dist/
+
+# Build artifacts
+build/
+
+# Input assets
+*-assets/
+
+# Output artifacts
+video/out/
+transcripts/
+
+# Any goddamn video files. It's shitting them everywhere. Gotta fix that
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.flv
+*.wmv
+*.mpeg
+*.mpg
+
+.DS_Store
+*.log
+.remotion/

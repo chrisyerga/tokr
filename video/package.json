@@ -1,0 +1,26 @@
+{
+  "name": "@tokr/video",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Final ../build/final.mp4",
+    "render:transit": "remotion render TransitMethodPreview ../build/preview-transit.mp4",
+    "render:spy": "remotion render SpySatellitePreview ../build/preview-spy.mp4",
+    "render:spec": "remotion render SpectroscopyPreview ../build/preview-spectroscopy.mp4",
+    "still": "remotion still"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.490",
+    "@remotion/media-utils": "4.0.490",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remotion": "4.0.490",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "5.8.2"
+  }
+}
