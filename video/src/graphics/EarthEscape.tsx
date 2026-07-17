@@ -8,10 +8,13 @@ import {
 } from "remotion";
 import { Earth } from "./planets/Earth";
 import { ExoplanetLife, StickFigure } from "./title/ExoplanetLife";
+import { NancyGraceRoman } from "./title/NancyGraceRoman";
 
 // Launch pad (on Earth) and destination (populated exoplanet), in output px.
 const EARTH_POS = { x: 220, y: 1380 };
 const PLANET_POS = { x: 850, y: 640 };
+// Nancy stands just left of the destination, claiming credit.
+const NANCY_POS = { x: 520, y: 720 };
 // Control point pulls the flight arc out to the left, over the frame edge.
 const ARC_CTRL = { x: 120, y: 900 };
 
@@ -88,8 +91,9 @@ const FlyingFigure: React.FC<{ traveler: Traveler; t: number }> = ({
 
 /**
  * "Eject button" gag: stick figures blast off from Earth (lower-left)
- * and arc across to the populated exoplanet (upper-right). Transparent
- * overlay; keeps the center of the frame mostly clear.
+ * and arc across to the populated exoplanet (upper-right). Nancy Grace
+ * Roman waits at the destination, smugly claiming "I found it!".
+ * Transparent overlay; keeps the center of the frame mostly clear.
  */
 export const EarthEscape: React.FC = () => {
   const frame = useCurrentFrame();
@@ -99,6 +103,12 @@ export const EarthEscape: React.FC = () => {
   const earthIn = spring({ frame, fps, config: { damping: 13, stiffness: 90 } });
   const planetIn = spring({
     frame: Math.max(0, frame - 8),
+    fps,
+    config: { damping: 13, stiffness: 90 },
+  });
+  // Absolute ~frame 795 / "Roman" at 26.4s; overlay starts at 21.5s → ~4.9s in.
+  const nancyIn = spring({
+    frame: Math.max(0, frame - Math.round(4.9 * fps)),
     fps,
     config: { damping: 13, stiffness: 90 },
   });
@@ -129,6 +139,19 @@ export const EarthEscape: React.FC = () => {
         }}
       >
         <ExoplanetLife size={300} />
+      </div>
+
+      {/* Nancy Grace Roman — smugly claiming the find */}
+      <div
+        style={{
+          position: "absolute",
+          left: NANCY_POS.x - 130,
+          top: NANCY_POS.y - 175,
+          opacity: nancyIn,
+          transform: `translateX(${interpolate(nancyIn, [0, 1], [-200, 0])}px)`,
+        }}
+      >
+        <NancyGraceRoman size={260} speech="Me. I did that shit." speechAt={5.25} />
       </div>
 
       {/* Escapees */}

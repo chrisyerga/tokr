@@ -8,7 +8,24 @@ import { Goldilocks } from "./graphics/flair/Goldilocks";
 import { TitleCard } from "./graphics/TitleCard";
 import { ExoplanetTrio } from "./graphics/ExoplanetTrio";
 import { EarthEscape } from "./graphics/EarthEscape";
+import { NancyIntro } from "./graphics/NancyIntro";
+import { NancyGraceRoman } from "./graphics/title/NancyGraceRoman";
 import type { EditDoc, SubtitleChunk } from "./types";
+
+const NancyGraceRomanPreview: React.FC = () => (
+  <div
+    style={{
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "#0a0f24",
+    }}
+  >
+    <NancyGraceRoman size={420} speech="Me. I did that shit." speechAt={0.5} />
+  </div>
+);
 
 const defaultStyle = {
   fontFamily: "Montserrat",
@@ -139,6 +156,22 @@ export const RemotionRoot: React.FC = () => {
         id="EarthEscapePreview"
         component={EarthEscape}
         durationInFrames={210}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="NancyGraceRomanPreview"
+        component={NancyGraceRomanPreview}
+        durationInFrames={120}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="NancyIntroPreview"
+        component={NancyIntro}
+        durationInFrames={180}
         fps={30}
         width={1080}
         height={1920}

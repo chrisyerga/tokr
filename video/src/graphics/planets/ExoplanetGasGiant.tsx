@@ -11,17 +11,35 @@ export const ExoplanetGasGiant: React.FC<{ size?: number }> = ({ size = 340 }) =
   const tilt = Math.sin(t * Math.PI * 2 * 0.12) * 3;
   const r = size * 0.36;
   const c = size / 2;
+  const ringRx = r * 1.85;
+  const ringStroke = 13;
+  // Rings extend past the planet square — pad the SVG so tips aren't clipped.
+  const pad = Math.max(0, Math.ceil(ringRx + ringStroke - size / 2) + 4);
+  const vb = size + pad * 2;
 
   return (
     <div
       style={{
         width: size,
         height: size,
+        position: "relative",
+        overflow: "visible",
         transform: `translateY(${bob}px) rotate(${tilt}deg)`,
-        filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.5))",
       }}
     >
-      <svg viewBox={`0 0 ${size} ${size}`} width="100%" height="100%">
+      <svg
+        viewBox={`${-pad} ${-pad} ${vb} ${vb}`}
+        width={vb}
+        height={vb}
+        style={{
+          position: "absolute",
+          left: -pad,
+          top: -pad,
+          overflow: "visible",
+          // Filter on the SVG (not the box) so ring tips aren't clipped.
+          filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.5))",
+        }}
+      >
         <defs>
           <radialGradient id="gasG" cx="38%" cy="32%" r="80%">
             <stop offset="0%" stopColor="#c58bf0" />
@@ -37,11 +55,11 @@ export const ExoplanetGasGiant: React.FC<{ size?: number }> = ({ size = 340 }) =
         <ellipse
           cx={c}
           cy={c}
-          rx={r * 1.85}
+          rx={ringRx}
           ry={r * 0.42}
           fill="none"
           stroke="#f2c14e"
-          strokeWidth={13}
+          strokeWidth={ringStroke}
           opacity={0.9}
           transform={`rotate(-18 ${c} ${c})`}
         />
@@ -71,12 +89,11 @@ export const ExoplanetGasGiant: React.FC<{ size?: number }> = ({ size = 340 }) =
 
         {/* Ring front arc */}
         <path
-          d={`M ${c - r * 1.83} ${c + r * 0.36} A ${r * 1.85} ${r * 0.42} -18 0 0 ${c + r * 1.8} ${c - r * 0.22}`}
+          d={`M ${c - r * 1.83} ${c + r * 0.36} A ${ringRx} ${r * 0.42} -18 0 0 ${c + r * 1.8} ${c - r * 0.22}`}
           fill="none"
           stroke="#f2c14e"
-          strokeWidth={13}
+          strokeWidth={ringStroke}
           opacity={0.95}
-          transform={`rotate(0 ${c} ${c})`}
         />
       </svg>
     </div>

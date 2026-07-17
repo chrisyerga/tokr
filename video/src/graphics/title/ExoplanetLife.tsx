@@ -56,6 +56,11 @@ export const ExoplanetLife: React.FC<{ size?: number }> = ({ size = 360 }) => {
   const t = frame / fps;
 
   const planetR = size * 0.32;
+  const ringRx = planetR * 1.7;
+  const ringStroke = 10;
+  // Rings extend past the planet square — pad the SVG so tips aren't clipped.
+  const pad = Math.max(0, Math.ceil(ringRx + ringStroke - size / 2) + 4);
+  const vb = size + pad * 2;
   const cx = size / 2;
   const cy = size / 2;
   const spin = Math.sin(t * Math.PI * 2 * 0.18) * 4;
@@ -66,11 +71,23 @@ export const ExoplanetLife: React.FC<{ size?: number }> = ({ size = 360 }) => {
         width: size,
         height: size,
         position: "relative",
+        overflow: "visible",
         transform: `rotate(${spin}deg)`,
-        filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.5))",
       }}
     >
-      <svg viewBox={`0 0 ${size} ${size}`} width="100%" height="100%">
+      <svg
+        viewBox={`${-pad} ${-pad} ${vb} ${vb}`}
+        width={vb}
+        height={vb}
+        style={{
+          position: "absolute",
+          left: -pad,
+          top: -pad,
+          overflow: "visible",
+          // Filter on the SVG (not the box) so ring tips aren't clipped.
+          filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.5))",
+        }}
+      >
         <defs>
           <radialGradient id="planetG" cx="38%" cy="32%" r="75%">
             <stop offset="0%" stopColor="#8fe3a5" />
@@ -83,11 +100,11 @@ export const ExoplanetLife: React.FC<{ size?: number }> = ({ size = 360 }) => {
         <ellipse
           cx={cx}
           cy={cy}
-          rx={planetR * 1.7}
+          rx={ringRx}
           ry={planetR * 0.5}
           fill="none"
           stroke="#c9a2e8"
-          strokeWidth={10}
+          strokeWidth={ringStroke}
           opacity={0.85}
           transform={`rotate(-14 ${cx} ${cy})`}
         />
@@ -108,10 +125,10 @@ export const ExoplanetLife: React.FC<{ size?: number }> = ({ size = 360 }) => {
 
         {/* Ring front arc */}
         <path
-          d={`M ${cx - planetR * 1.7} ${cy + planetR * 0.18} A ${planetR * 1.7} ${planetR * 0.5} -14 0 0 ${cx + planetR * 1.66} ${cy + planetR * 0.32}`}
+          d={`M ${cx - ringRx} ${cy + planetR * 0.18} A ${ringRx} ${planetR * 0.5} -14 0 0 ${cx + planetR * 1.66} ${cy + planetR * 0.32}`}
           fill="none"
           stroke="#dcbaf5"
-          strokeWidth={10}
+          strokeWidth={ringStroke}
           opacity={0.95}
         />
       </svg>

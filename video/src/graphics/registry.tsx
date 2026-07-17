@@ -6,6 +6,7 @@ import { TitleCard } from "./TitleCard";
 import { TitleCardOverlay } from "./TitleCardOverlay";
 import { ExoplanetTrio } from "./ExoplanetTrio";
 import { EarthEscape } from "./EarthEscape";
+import { NancyIntro } from "./NancyIntro";
 
 export const GRAPHICS: Record<string, React.FC<{ params?: Record<string, unknown> }>> = {
   TransitMethod: () => <TransitMethod />,
@@ -13,6 +14,7 @@ export const GRAPHICS: Record<string, React.FC<{ params?: Record<string, unknown
   Spectroscopy: () => <Spectroscopy />,
   TitleCard: () => <TitleCard />,
   TitleCardOverlay: () => <TitleCardOverlay />,
+  NancyIntro: () => <NancyIntro />,
   ExoplanetTrio: () => <ExoplanetTrio />,
   EarthEscape: () => <EarthEscape />,
 };
