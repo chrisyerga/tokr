@@ -10,31 +10,37 @@ import {
 } from "remotion";
 
 /**
- * Goldilocks flair: head rocks back and forth at the top;
- * the three bears sit underneath.
+ * Goldilocks flair: three bears arrive first, then after a beat
+ * smug Goldilocks drops in above them and rocks.
  * PNGs are black-backed — screen blend knocks out the black.
  */
 export const Goldilocks: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const enter = spring({
+  const bearsEnter = spring({
     frame,
     fps,
-    config: { damping: 16, stiffness: 120 },
-  });
-
-  // Rock ~±10° on a ~1.2s cycle
-  const rock = Math.sin((frame / fps) * Math.PI * 2 * 0.85) * 10;
-  const bob = Math.sin((frame / fps) * Math.PI * 2 * 1.1) * 6;
-
-  const bearsEnter = spring({
-    frame: Math.max(0, frame - 6),
-    fps,
-    config: { damping: 14, stiffness: 100 },
+    config: { damping: 14, stiffness: 110 },
   });
   const bearsScale = interpolate(bearsEnter, [0, 1], [0.85, 1]);
-  const bearsY = interpolate(bearsEnter, [0, 1], [40, 0]);
+  const bearsY = interpolate(bearsEnter, [0, 1], [50, 0]);
+
+  // Beat after the bears settle, then she slams in smugly.
+  const goldieDelay = Math.round(0.75 * fps);
+  const goldieEnter = spring({
+    frame: Math.max(0, frame - goldieDelay),
+    fps,
+    config: { damping: 11, stiffness: 200, mass: 0.65 },
+  });
+  const goldieY = interpolate(goldieEnter, [0, 1], [-120, 0]);
+  const goldieScale = interpolate(goldieEnter, [0, 1], [1.25, 1]);
+
+  // Rock only once she's mostly in
+  const rock =
+    Math.sin((frame / fps) * Math.PI * 2 * 0.85) * 10 * goldieEnter;
+  const bob =
+    Math.sin((frame / fps) * Math.PI * 2 * 1.1) * 6 * goldieEnter;
 
   return (
     <AbsoluteFill
@@ -51,14 +57,13 @@ export const Goldilocks: React.FC = () => {
           flexDirection: "column",
           alignItems: "center",
           gap: 4,
-          opacity: enter,
-          transform: `scale(${interpolate(enter, [0, 1], [0.7, 1])})`,
         }}
       >
         <div
           style={{
             width: 560,
-            transform: `rotate(${rock}deg) translateY(${bob}px)`,
+            opacity: goldieEnter,
+            transform: `translateY(${goldieY}px) scale(${goldieScale}) rotate(${rock}deg) translateY(${bob}px)`,
             transformOrigin: "50% 90%",
             filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.45))",
           }}

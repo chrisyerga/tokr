@@ -38,7 +38,7 @@ const FactoidSlam: React.FC<{
         fontWeight: 800,
         fontSize: 42,
         lineHeight: 1.15,
-        color: "#FFD400",
+        color: "#FF88aa",
         textAlign: "center",
         whiteSpace: "pre-line",
         textShadow:

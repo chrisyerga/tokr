@@ -92,6 +92,8 @@ export const SubtitleWordSchema = z.object({
   text: z.string(),
   start: z.number(),
   end: z.number(),
+  flair: z.string().optional(),
+  censor: z.boolean().optional(),
 });
 
 export const SubtitleChunkSchema = z.object({

@@ -4,6 +4,11 @@ export type SubtitleWord = {
   end: number;
   /** Name of a component in graphics/flair/registry (e.g. "Goldilocks"). */
   flair?: string;
+  /**
+   * When true, karaoke shows a scrambling red "@%$!" instead of `text`.
+   * Useful for bleeping swears while keeping timing.
+   */
+  censor?: boolean;
 };
 
 export type SubtitleChunk = {

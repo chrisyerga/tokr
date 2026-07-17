@@ -151,7 +151,7 @@ export const EarthEscape: React.FC = () => {
           transform: `translateX(${interpolate(nancyIn, [0, 1], [-200, 0])}px)`,
         }}
       >
-        <NancyGraceRoman size={260} speech="Me. I did that shit." speechAt={5.25} />
+        <NancyGraceRoman size={260} speech="Me. I did that $#!%." speechAt={5.25} />
       </div>
 
       {/* Escapees */}

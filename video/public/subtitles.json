@@ -912,7 +912,8 @@
       {
         "text": "fuck",
         "start": 45.99999999999999,
-        "end": 46.26
+        "end": 46.26,
+        "censor": true
       },
       {
         "text": "I'm",
