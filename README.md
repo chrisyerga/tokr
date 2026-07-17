@@ -1,53 +1,106 @@
 # Tokr — JSON edit-list video pipeline
 
-Reusable pipeline for assembling talking-head TikToks from short clips:
+Reusable pipeline for assembling talking-head TikToks from short clips.
 
-1. **Transcribe** clips with word-level timestamps (`mlx-whisper`)
-2. **Edit** via a checked-in JSON decision list (`edits/*.json`)
-3. **Cut** with ffmpeg (re-encode, loudnorm) → `build/base.mp4`
-4. **Subtitles** remapped to output time → karaoke chunks
-5. **Compose** in Remotion: base video + fullscreen motion graphics + karaoke captions
+## Workflow (draft → tweak → polish)
 
-## Quick start (Roman telescope video)
-
-```bash
-# Already done for roman-v1 — re-run as needed:
-npm run transcribe
-npm run cut -- edits/roman-v1.json build/base.mp4
-npm run subtitles -- edits/roman-v1.json build/subtitles.json
-npm run render          # → build/final.mp4
-npm run studio          # Remotion preview
+```mermaid
+flowchart TD
+  transcripts[transcripts] --> hints[edits/roman.hints.json]
+  hints --> select[npm run draft]
+  select --> draft[roman.draft.json]
+  select --> review[build/edit-review.md]
+  draft --> patch[edits/roman.patch.json]
+  patch --> lock[npm run lock]
+  lock --> edit[roman-v1.json]
+  edit --> rough[npm run rough]
+  rough --> base[base.mp4 + subtitles]
+  base --> studio[Remotion Studio polish]
+  studio --> final[final.mp4]
 ```
 
-## Edit JSON (v1)
+### 1. Hints (intent)
 
-See [`edits/roman-v1.json`](edits/roman-v1.json). Schema in [`pipeline/src/schema.ts`](pipeline/src/schema.ts).
+Edit [`edits/roman.hints.json`](edits/roman.hints.json):
 
-Key fields:
+- `mustInclude` / `mustExclude` — phrases that must / must not appear
+- `excludeAssets` / per-beat `preferAssets` — force or ban takes
+- `beats[]` — narrative slots the selector fills
+- `overlayHints[]` — which graphics attach to which spoken terms
+- `targetDurationSec` — soft min/max for the rough cut
 
-- `timeline[]` — `{ asset, srcIn, srcOut }` clips in order
-- `overlays[]` — `{ generator, start, end, mode }` fullscreen/overlay graphics
-- `subtitleStyle` — karaoke colors, font, chunk size
+### 2. Auto draft
 
-Timeline remapping (source time → output time) lives in [`pipeline/src/remap.ts`](pipeline/src/remap.ts).
+```bash
+npm run draft
+```
 
-## Graphics registry
+Writes:
 
-| Generator | Preview composition |
-|-----------|---------------------|
-| `TransitMethod` | `TransitMethodPreview` |
-| `SpySatellite` | `SpySatellitePreview` |
-| `Spectroscopy` | `SpectroscopyPreview` |
+- [`edits/roman.draft.json`](edits/roman.draft.json) — proposed edit decision list
+- [`build/edit-review.md`](build/edit-review.md) — transcripts, why each take won, coverage checklist
 
-Add new generators under `video/src/graphics/` and register them in `registry.tsx`.
+### 3. Tweak
+
+**A. Change hints and re-run `npm run draft`** — best for “drop the privacy beat”, “force couch cushions”, “under 3:30”.
+
+**B. Surgical patch** — edit [`edits/roman.patch.json`](edits/roman.patch.json):
+
+```json
+{
+  "version": 1,
+  "remove": ["c_IMG_7975"],
+  "replace": [{ "clipId": "c_IMG_7963", "withAsset": "IMG_7966" }],
+  "trim": [{ "clipId": "c_IMG_7974", "srcIn": 2.0, "srcOut": 28.0 }],
+  "insert": [{ "afterClipId": "c_IMG_7960", "asset": "IMG_7958" }],
+  "order": ["c_IMG_7954", "c_IMG_7959"]
+}
+```
+
+See [`edits/roman.patch.example.json`](edits/roman.patch.example.json) for a worked example.
+
+Then lock:
+
+```bash
+npm run lock
+```
+
+→ [`edits/roman-v1.json`](edits/roman-v1.json)
+
+### 4. Rough cut (watch before full Remotion render)
+
+```bash
+npm run rough
+```
+
+Cuts + loudnorms + remaps subtitles + syncs into `video/public/`. Open `build/base.mp4` or `npm run studio`.
+
+### 5. Polish in Remotion Studio
+
+Overlays, flair (`"flair": "Goldilocks"` on a subtitle word), karaoke spacing — then:
+
+```bash
+npm run render
+```
+
+## Commands
+
+| Script | What it does |
+|--------|----------------|
+| `npm run transcribe` | Whisper word timestamps → `transcripts/` |
+| `npm run draft` | hints → draft edit + review markdown |
+| `npm run lock` | draft + patch → locked `roman-v1.json` |
+| `npm run rough` | lock + cut + subtitles + sync-public |
+| `npm run studio` | Remotion live preview |
+| `npm run render` | Final 1080×1920 mp4 |
 
 ## Layout
 
 ```
-pipeline/     # Node/TS tools (schema, remap, cut, subtitles)
-video/        # Remotion project
-edits/        # Edit decision lists
+pipeline/     # select, patch, cut, subtitles, remap
+video/        # Remotion (Final + graphics + flair)
+edits/        # hints, draft, patch, locked edit
 transcripts/  # Whisper JSON per clip
 roman-assets/ # Source footage
-build/        # base.mp4, subtitles.json, final.mp4
+build/        # base.mp4, edit-review.md, final.mp4
 ```

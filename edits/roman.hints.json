@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "title": "Nancy Grace Roman Space Telescope",
+  "assetsGlob": "roman-assets/*.MOV",
+  "transcriptsDir": "transcripts",
+  "targetDurationSec": {
+    "min": 300,
+    "max": 450
+  },
+  "mustInclude": [
+    "Nancy Grace Roman",
+    "part of its mission is gonna be awesome",
+    "Goldilocks",
+    "National Reconnaissance",
+    "bad guys need to get blowed up",
+    "couch cushions",
+    "brightness",
+    "spectroscopy"
+  ],
+  "mustExclude": [
+    "Chick-fil-a"
+  ],
+  "preferAssets": [],
+  "excludeAssets": [
+  ],
+  "beats": [
+    {
+      "id": "intro",
+      "mustInclude": ["Nancy Grace Roman"],
+      "preferAssets": ["IMG_7954"]
+    },
+    {
+      "id": "mission",
+      "mustInclude": ["Goldilocks", "sci-fi nerd"],
+      "preferAssets": ["IMG_7959"]
+    },
+    {
+      "id": "pivot",
+      "mustInclude": ["how it came"],
+      "preferAssets": ["IMG_7960"]
+    },
+    {
+      "id": "grind",
+      "mustInclude": ["decades"],
+      "preferAssets": ["IMG_7961"]
+    },
+    {
+      "id": "nro-twist",
+      "mustInclude": ["hand-me-down"],
+      "preferAssets": ["IMG_7962"]
+    },
+    {
+      "id": "who-nro",
+      "mustInclude": ["National Reconnaissance", "bad guys", "blowed up"],
+      "preferAssets": ["IMG_7963"]
+    },
+    {
+      "id": "donation",
+      "mustInclude": ["couch cushions"],
+      "preferAssets": ["IMG_7969"]
+    },
+    {
+      "id": "good-though",
+      "mustInclude": ["irked"],
+      "preferAssets": ["IMG_7972"]
+    },
+    {
+      "id": "irony",
+      "mustInclude": ["ironic"],
+      "preferAssets": ["IMG_7973"]
+    },
+    {
+      "id": "pointed-at-earth",
+      "mustInclude": ["similar to Hubble"],
+      "preferAssets": ["IMG_7974"]
+    },
+    {
+      "id": "privacy",
+      "mustInclude": ["privacy"],
+      "preferAssets": ["IMG_7975"]
+    },
+    {
+      "id": "stipulation",
+      "mustInclude": ["pinky"],
+      "preferAssets": ["IMG_7979"]
+    },
+    {
+      "id": "stars-as-dots",
+      "mustInclude": ["specks"],
+      "preferAssets": ["IMG_7982"]
+    },
+    {
+      "id": "transit",
+      "mustInclude": ["brightness"],
+      "preferAssets": ["IMG_7983"]
+    },
+    {
+      "id": "transit-learn",
+      "mustInclude": ["dip in brightness"],
+      "preferAssets": ["IMG_7984"]
+    },
+    {
+      "id": "spectroscopy",
+      "mustInclude": ["spectroscopy"],
+      "preferAssets": ["IMG_7988"]
+    },
+    {
+      "id": "finale",
+      "mustInclude": ["road trip"],
+      "preferAssets": ["IMG_7990"]
+    }
+  ],
+  "overlayHints": [
+    {
+      "id": "spy-nro",
+      "generator": "SpySatellite",
+      "mode": "fullscreen",
+      "match": ["National Reconnaissance", "couch cushions"]
+    },
+    {
+      "id": "transit",
+      "generator": "TransitMethod",
+      "mode": "fullscreen",
+      "match": ["measure the brightness", "dip in brightness"]
+    },
+    {
+      "id": "spectroscopy",
+      "generator": "Spectroscopy",
+      "mode": "fullscreen",
+      "match": ["spectroscopy"]
+    }
+  ],
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "subtitleStyle": {
+    "fontFamily": "Montserrat",
+    "fontWeight": 800,
+    "fontSize": 64,
+    "color": "#FFFFFF",
+    "highlightColor": "#FFD400",
+    "outlineColor": "#000000",
+    "outlineWidth": 8,
+    "bottomOffset": 280,
+    "maxWordsPerChunk": 4
+  },
+  "audio": {
+    "loudnorm": true,
+    "targetLufs": -16,
+    "crossfadeMs": 40
+  }
+}

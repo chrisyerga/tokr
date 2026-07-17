@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "remove": [
+    "c_IMG_7975"
+  ],
+  "replace": [],
+  "trim": [
+    {
+      "clipId": "c_IMG_7974",
+      "srcIn": 2.0,
+      "srcOut": 30.0
+    }
+  ],
+  "insert": []
+}

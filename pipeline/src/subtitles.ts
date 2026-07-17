@@ -135,9 +135,17 @@ export async function buildSubtitles(
   return chunkWords(remapped, edit.subtitleStyle.maxWordsPerChunk);
 }
 
+function resolveFromRoot(p: string): string {
+  return path.isAbsolute(p) ? p : path.resolve(ROOT, p);
+}
+
 async function main() {
-  const editArg = process.argv[2] ?? path.join(ROOT, "edits/roman-v1.json");
-  const outArg = process.argv[3] ?? path.join(ROOT, "build/subtitles.json");
+  const editArg = resolveFromRoot(
+    process.argv[2] ?? "edits/roman-v1.json",
+  );
+  const outArg = resolveFromRoot(
+    process.argv[3] ?? "build/subtitles.json",
+  );
   const edit = EditSchema.parse(
     JSON.parse(await readFile(editArg, "utf8")),
   );

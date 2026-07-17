@@ -19,8 +19,12 @@ function run(cmd: string, args: string[], cwd = ROOT): Promise<void> {
   });
 }
 
+function resolveFromRoot(p: string): string {
+  return path.isAbsolute(p) ? p : path.resolve(ROOT, p);
+}
+
 export async function loadEdit(editPath: string): Promise<Edit> {
-  const raw = JSON.parse(await readFile(editPath, "utf8"));
+  const raw = JSON.parse(await readFile(resolveFromRoot(editPath), "utf8"));
   return EditSchema.parse(raw);
 }
 
@@ -168,8 +172,10 @@ export async function cutEdit(
 }
 
 async function main() {
-  const editArg = process.argv[2] ?? path.join(ROOT, "edits/roman-v1.json");
-  const outArg = process.argv[3] ?? path.join(ROOT, "build/base.mp4");
+  const editArg = resolveFromRoot(
+    process.argv[2] ?? "edits/roman-v1.json",
+  );
+  const outArg = resolveFromRoot(process.argv[3] ?? "build/base.mp4");
   const edit = await loadEdit(editArg);
   console.log(
     `Cutting ${edit.timeline.length} clips → ${outArg} (est. ${totalDuration(edit).toFixed(1)}s)`,

@@ -5,13 +5,18 @@
   "description": "JSON edit-list video pipeline + Remotion graphics/subtitles",
   "scripts": {
     "transcribe": "bash pipeline/scripts/transcribe.sh",
+    "select": "npm --prefix pipeline run select --",
+    "patch": "npm --prefix pipeline run patch --",
     "cut": "npm --prefix pipeline run cut --",
     "subtitles": "npm --prefix pipeline run subtitles --",
     "summarize": "npm --prefix pipeline exec -- tsx src/summarize-transcripts.ts",
     "sync-public": "cp build/base.mp4 build/subtitles.json build/cut-meta.json video/public/ && cp edits/roman-v1.json video/public/edit.json",
     "studio": "npm --prefix video run studio",
     "render": "npm run sync-public && npm --prefix video run render",
-    "render:previews": "npm --prefix video run render:transit && npm --prefix video run render:spy && npm --prefix video run render:spec"
+    "render:previews": "npm --prefix video run render:transit && npm --prefix video run render:spy && npm --prefix video run render:spec",
+    "draft": "npm --prefix pipeline run select -- edits/roman.hints.json edits/roman.draft.json build/edit-review.md",
+    "lock": "npm --prefix pipeline run patch -- edits/roman.draft.json edits/roman.patch.json edits/roman-v1.json",
+    "rough": "npm run lock && npm run cut -- edits/roman-v1.json build/base.mp4 && npm run subtitles -- edits/roman-v1.json build/subtitles.json && npm run sync-public"
   },
   "devDependencies": {
     "@types/node": "^26.1.1"

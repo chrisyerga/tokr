@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "select": "tsx src/select.ts",
+    "patch": "tsx src/patch.ts",
     "cut": "tsx src/cut.ts",
     "subtitles": "tsx src/subtitles.ts",
     "typecheck": "tsc --noEmit"
