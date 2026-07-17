@@ -265,7 +265,10 @@ export function buildEditFromPicks(hints: Hints, picks: PickRecord[]): Edit {
     path: p.clip.path,
     duration: p.clip.speechEnd + 1,
   }));
-  const overlays = buildOverlays(timeline, picks, hints.overlayHints);
+  const overlays = [
+    ...hints.fixedOverlays,
+    ...buildOverlays(timeline, picks, hints.overlayHints),
+  ];
 
   const edit = EditSchema.parse({
     version: 1,

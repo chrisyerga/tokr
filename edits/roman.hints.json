@@ -115,7 +115,23 @@
       "preferAssets": ["IMG_7990"]
     }
   ],
+  "fixedOverlays": [
+    {
+      "id": "title-card",
+      "generator": "TitleCardOverlay",
+      "mode": "overlay",
+      "start": 0,
+      "end": 4.5,
+      "params": {}
+    }
+  ],
   "overlayHints": [
+    {
+      "id": "goldilocks",
+      "generator": "Goldilocks",
+      "mode": "overlay",
+      "match": ["goldilocks", "goldilocks zone"]
+    },
     {
       "id": "spy-nro",
       "generator": "SpySatellite",

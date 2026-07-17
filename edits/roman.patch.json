@@ -2,6 +2,12 @@
   "version": 1,
   "remove": [],
   "replace": [],
-  "trim": [],
+  "trim": [
+    {
+      "clipId": "c_IMG_7956",
+      "srcIn": 4.0,
+      "srcOut": 10.86
+    }
+  ],
   "insert": []
 }

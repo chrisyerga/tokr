@@ -1,6 +1,6 @@
 {
   "outPath": "/Users/chris/dev/personal/tokr/build/base.mp4",
-  "duration": 334.46999999999997,
+  "duration": 330.46999999999997,
   "segments": [
     {
       "clip": {
@@ -18,13 +18,13 @@
       "clip": {
         "id": "c_IMG_7956",
         "asset": "IMG_7956",
-        "srcIn": 0,
+        "srcIn": 4,
         "srcOut": 10.86,
         "note": "So one of the gizmos that has this thing called a coronagraph, basically it's on"
       },
       "outStart": 9.94,
-      "outEnd": 20.799999999999997,
-      "duration": 10.86
+      "outEnd": 16.799999999999997,
+      "duration": 6.859999999999999
     },
     {
       "clip": {
@@ -34,8 +34,8 @@
         "srcOut": 11.96,
         "note": "The sci-fi nerd in me likes to think about like, I don't know, a couple hundred"
       },
-      "outStart": 20.799999999999997,
-      "outEnd": 32.76,
+      "outStart": 16.799999999999997,
+      "outEnd": 28.759999999999998,
       "duration": 11.96
     },
     {
@@ -46,8 +46,8 @@
         "srcOut": 14.98,
         "note": "It was a big deal finding any planets at all not too long ago. Now it's, let's f"
       },
-      "outStart": 32.76,
-      "outEnd": 47.739999999999995,
+      "outStart": 28.759999999999998,
+      "outEnd": 43.739999999999995,
       "duration": 14.98
     },
     {
@@ -58,8 +58,8 @@
         "srcOut": 7.74,
         "note": "The Roman Space Telescope is rad as fuck. I'm super excited for it. But what I w"
       },
-      "outStart": 47.739999999999995,
-      "outEnd": 55.48,
+      "outStart": 43.739999999999995,
+      "outEnd": 51.48,
       "duration": 7.74
     },
     {
@@ -70,8 +70,8 @@
         "srcOut": 22.4,
         "note": "you know Hubble, James Webb, I mean that's a lifetime for some scientists, right"
       },
-      "outStart": 55.48,
-      "outEnd": 77.88,
+      "outStart": 51.48,
+      "outEnd": 73.88,
       "duration": 22.4
     },
     {
@@ -82,8 +82,8 @@
         "srcOut": 12.18,
         "note": "And the Nancy Grace Roman Telescope's no different, but one thing that is differ"
       },
-      "outStart": 77.88,
-      "outEnd": 90.06,
+      "outStart": 73.88,
+      "outEnd": 86.06,
       "duration": 12.18
     },
     {
@@ -94,8 +94,8 @@
         "srcOut": 10.96,
         "note": "the National Reconnaissance Office, and they're basically an agency of the, you"
       },
-      "outStart": 90.06,
-      "outEnd": 101.02000000000001,
+      "outStart": 86.06,
+      "outEnd": 97.02000000000001,
       "duration": 10.96
     },
     {
@@ -106,8 +106,8 @@
         "srcOut": 17.98,
         "note": "NRO doesn't have these same budget problems. They build a whole mess of them and"
       },
-      "outStart": 101.02000000000001,
-      "outEnd": 119.00000000000001,
+      "outStart": 97.02000000000001,
+      "outEnd": 115.00000000000001,
       "duration": 17.98
     },
     {
@@ -118,8 +118,8 @@
         "srcOut": 20.38,
         "note": "Of course, I'm irked because it's like, God, wouldn't it be great if we lived in"
       },
-      "outStart": 119.00000000000001,
-      "outEnd": 139.38000000000002,
+      "outStart": 115.00000000000001,
+      "outEnd": 135.38000000000002,
       "duration": 20.38
     },
     {
@@ -130,8 +130,8 @@
         "srcOut": 13.14,
         "note": "But it's just so ironic, like the dichotomy between, you know, these scientists"
       },
-      "outStart": 139.38000000000002,
-      "outEnd": 152.52000000000004,
+      "outStart": 135.38000000000002,
+      "outEnd": 148.52000000000004,
       "duration": 13.14
     },
     {
@@ -142,8 +142,8 @@
         "srcOut": 34.34,
         "note": "It's also kind of cool just to think about, maybe cool isn't the right word. So"
       },
-      "outStart": 152.52000000000004,
-      "outEnd": 186.86000000000004,
+      "outStart": 148.52000000000004,
+      "outEnd": 182.86000000000004,
       "duration": 34.34
     },
     {
@@ -154,8 +154,8 @@
         "srcOut": 22.1,
         "note": "imagine the capabilities of that telescope. It's like looking down at the ground"
       },
-      "outStart": 186.86000000000004,
-      "outEnd": 208.96000000000004,
+      "outStart": 182.86000000000004,
+      "outEnd": 204.96000000000004,
       "duration": 22.1
     },
     {
@@ -166,8 +166,8 @@
         "srcOut": 19.96,
         "note": "ironically came with a stipulation. They said you can have this telescope but yo"
       },
-      "outStart": 208.96000000000004,
-      "outEnd": 227.93000000000004,
+      "outStart": 204.96000000000004,
+      "outEnd": 223.93000000000004,
       "duration": 18.970000000000002
     },
     {
@@ -178,8 +178,8 @@
         "srcOut": 17.48,
         "note": "So look, they're looking for planets orbiting these other stars, other suns. The"
       },
-      "outStart": 227.93000000000004,
-      "outEnd": 245.41000000000003,
+      "outStart": 223.93000000000004,
+      "outEnd": 241.41000000000003,
       "duration": 17.48
     },
     {
@@ -190,8 +190,8 @@
         "srcOut": 15.94,
         "note": "What they do is they watch that star for a period of time and they measure the b"
       },
-      "outStart": 245.41000000000003,
-      "outEnd": 261.35,
+      "outStart": 241.41000000000003,
+      "outEnd": 257.35,
       "duration": 15.94
     },
     {
@@ -202,8 +202,8 @@
         "srcOut": 13.14,
         "note": "by measuring this like dip in brightness and its duration, they can get a sense"
       },
-      "outStart": 261.35,
-      "outEnd": 274.49,
+      "outStart": 257.35,
+      "outEnd": 270.49,
       "duration": 13.14
     },
     {
@@ -214,8 +214,8 @@
         "srcOut": 26.08,
         "note": "But not just that, they can also tell things like what atmosphere is on the plan"
       },
-      "outStart": 274.49,
-      "outEnd": 300.57,
+      "outStart": 270.49,
+      "outEnd": 296.57,
       "duration": 26.08
     },
     {
@@ -226,8 +226,8 @@
         "srcOut": 33.9,
         "note": "It's super awesome to think that we have the ability to figure out God knows how"
       },
-      "outStart": 300.57,
-      "outEnd": 334.46999999999997,
+      "outStart": 296.57,
+      "outEnd": 330.46999999999997,
       "duration": 33.9
     }
   ]

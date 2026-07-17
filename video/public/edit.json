@@ -112,7 +112,7 @@
     {
       "id": "c_IMG_7956",
       "asset": "IMG_7956",
-      "srcIn": 0,
+      "srcIn": 4,
       "srcOut": 10.86,
       "note": "So one of the gizmos that has this thing called a coronagraph, basically it's on"
     },
@@ -238,27 +238,35 @@
   ],
   "overlays": [
     {
+      "id": "title-card",
+      "generator": "TitleCardOverlay",
+      "mode": "overlay",
+      "start": 0,
+      "end": 4.5,
+      "params": {}
+    },
+    {
       "id": "spy-nro",
       "generator": "SpySatellite",
       "mode": "fullscreen",
-      "start": 97,
-      "end": 102,
+      "start": 86.06,
+      "end": 115,
       "params": {}
     },
     {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",
-      "start": 245.41,
-      "end": 274.49,
+      "start": 241.41,
+      "end": 270.49,
       "params": {}
     },
     {
       "id": "spectroscopy",
       "generator": "Spectroscopy",
       "mode": "fullscreen",
-      "start": 274.49,
-      "end": 300.57,
+      "start": 270.49,
+      "end": 296.57,
       "params": {}
     }
   ],

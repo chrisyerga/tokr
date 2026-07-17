@@ -5,6 +5,7 @@ import { TransitMethod } from "./graphics/TransitMethod";
 import { SpySatellite } from "./graphics/SpySatellite";
 import { Spectroscopy } from "./graphics/Spectroscopy";
 import { Goldilocks } from "./graphics/flair/Goldilocks";
+import { TitleCard } from "./graphics/TitleCard";
 import type { EditDoc, SubtitleChunk } from "./types";
 
 const defaultStyle = {
@@ -112,6 +113,14 @@ export const RemotionRoot: React.FC = () => {
         id="GoldilocksFlairPreview"
         component={Goldilocks}
         durationInFrames={90}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="TitleCardPreview"
+        component={TitleCard}
+        durationInFrames={150}
         fps={30}
         width={1080}
         height={1920}

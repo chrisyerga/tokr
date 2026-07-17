@@ -19,6 +19,16 @@ export const OverlayHintSchema = z.object({
   params: z.record(z.unknown()).default({}),
 });
 
+/** Overlay pinned to absolute output times (e.g. title card at 0s). */
+export const FixedOverlaySchema = z.object({
+  id: z.string(),
+  generator: z.string(),
+  mode: z.enum(["fullscreen", "overlay"]).default("fullscreen"),
+  start: z.number().nonnegative(),
+  end: z.number().positive(),
+  params: z.record(z.unknown()).default({}),
+});
+
 export const HintsSchema = z.object({
   version: z.literal(1),
   title: z.string(),
@@ -38,6 +48,7 @@ export const HintsSchema = z.object({
   excludeAssets: z.array(z.string()).default([]),
   beats: z.array(BeatHintSchema).default([]),
   overlayHints: z.array(OverlayHintSchema).default([]),
+  fixedOverlays: z.array(FixedOverlaySchema).default([]),
   /** Template fields copied into the draft edit. */
   fps: z.number().default(30),
   width: z.number().default(1080),
@@ -49,6 +60,7 @@ export const HintsSchema = z.object({
 export type Hints = z.infer<typeof HintsSchema>;
 export type BeatHint = z.infer<typeof BeatHintSchema>;
 export type OverlayHint = z.infer<typeof OverlayHintSchema>;
+export type FixedOverlay = z.infer<typeof FixedOverlaySchema>;
 
 export const PatchSchema = z.object({
   version: z.literal(1),

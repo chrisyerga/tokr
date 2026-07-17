@@ -2,11 +2,15 @@ import React from "react";
 import { TransitMethod } from "./TransitMethod";
 import { SpySatellite } from "./SpySatellite";
 import { Spectroscopy } from "./Spectroscopy";
+import { TitleCard } from "./TitleCard";
+import { TitleCardOverlay } from "./TitleCardOverlay";
 
 export const GRAPHICS: Record<string, React.FC<{ params?: Record<string, unknown> }>> = {
   TransitMethod: () => <TransitMethod />,
   SpySatellite: () => <SpySatellite />,
   Spectroscopy: () => <Spectroscopy />,
+  TitleCard: () => <TitleCard />,
+  TitleCardOverlay: () => <TitleCardOverlay />,
 };
 
 export function renderGraphic(

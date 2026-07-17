@@ -122,7 +122,10 @@ export async function applyPatch(edit: Edit, patch: Patch): Promise<Edit> {
         const c = clips.find((x) => x.id === t.asset);
         textByAsset[t.asset] = c?.textNorm ?? normalizeText(t.note ?? "");
       }
-      overlays = overlaysFromHints(timeline, textByAsset, hints.overlayHints);
+      overlays = [
+        ...hints.fixedOverlays,
+        ...overlaysFromHints(timeline, textByAsset, hints.overlayHints),
+      ];
     } catch {
       overlays = [];
     }
