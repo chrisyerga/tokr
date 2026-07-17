@@ -9,6 +9,7 @@ import { TitleCard } from "./graphics/TitleCard";
 import { ExoplanetTrio } from "./graphics/ExoplanetTrio";
 import { EarthEscape } from "./graphics/EarthEscape";
 import { NancyIntro } from "./graphics/NancyIntro";
+import { ScientistLifetime } from "./graphics/ScientistLifetime";
 import { NancyGraceRoman } from "./graphics/title/NancyGraceRoman";
 import type { EditDoc, SubtitleChunk } from "./types";
 
@@ -23,7 +24,7 @@ const NancyGraceRomanPreview: React.FC = () => (
       background: "#0a0f24",
     }}
   >
-    <NancyGraceRoman size={420} speech="Me. I did that shit." speechAt={0.5} />
+    <NancyGraceRoman size={420} speech="Me. I did that $#!%." speechAt={0.5} />
   </div>
 );
 
@@ -115,7 +116,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="SpySatellitePreview"
         component={SpySatellite}
-        durationInFrames={150}
+        durationInFrames={960}
         fps={30}
         width={1080}
         height={1920}
@@ -172,6 +173,14 @@ export const RemotionRoot: React.FC = () => {
         id="NancyIntroPreview"
         component={NancyIntro}
         durationInFrames={180}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="ScientistLifetimePreview"
+        component={ScientistLifetime}
+        durationInFrames={630}
         fps={30}
         width={1080}
         height={1920}

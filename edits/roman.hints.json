@@ -147,6 +147,14 @@
       "start": 21.5,
       "end": 29.0,
       "params": {}
+    },
+    {
+      "id": "scientist-lifetime",
+      "generator": "ScientistLifetime",
+      "mode": "overlay",
+      "start": 52.5,
+      "end": 73.5,
+      "params": {}
     }
   ],
   "overlayHints": [
@@ -160,7 +168,9 @@
       "id": "spy-nro",
       "generator": "SpySatellite",
       "mode": "fullscreen",
-      "match": ["National Reconnaissance", "couch cushions"]
+      "match": ["National Reconnaissance", "couch cushions"],
+      "start": 86.06,
+      "end": 115
     },
     {
       "id": "transit",

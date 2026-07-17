@@ -270,6 +270,14 @@
       "params": {}
     },
     {
+      "id": "scientist-lifetime",
+      "generator": "ScientistLifetime",
+      "mode": "overlay",
+      "start": 52.5,
+      "end": 73.5,
+      "params": {}
+    },
+    {
       "id": "spy-nro",
       "generator": "SpySatellite",
       "mode": "fullscreen",

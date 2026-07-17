@@ -47,8 +47,8 @@ export const NancyGraceRoman: React.FC<{
           style={{
             position: "absolute",
             left: "52%",
-            top: -8,
-            transform: `translateX(-50%) scale(${bubbleScale})`,
+            top: 8,
+            transform: `translateX(-50%) translateY(-100%) scale(${bubbleScale})`,
             opacity: bubbleOpacity,
             transformOrigin: "50% 100%",
             zIndex: 2,
@@ -67,7 +67,8 @@ export const NancyGraceRoman: React.FC<{
               padding: `${size * 0.045}px ${size * 0.08}px`,
               borderRadius: size * 0.08,
               border: `${Math.max(3, size * 0.018)}px solid #1a1a1a`,
-              whiteSpace: "nowrap",
+              whiteSpace: "pre-line",
+              textAlign: "center",
               boxShadow: "0 6px 0 rgba(0,0,0,0.25)",
             }}
           >
