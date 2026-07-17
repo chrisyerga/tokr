@@ -9,6 +9,7 @@ import { EarthEscape } from "./EarthEscape";
 import { NancyIntro } from "./NancyIntro";
 import { ScientistLifetime } from "./ScientistLifetime";
 import { CoolCrossout } from "./CoolCrossout";
+import { TelescopeFlip } from "./TelescopeFlip";
 
 export const GRAPHICS: Record<string, React.FC<{ params?: Record<string, unknown> }>> = {
   TransitMethod: () => <TransitMethod />,
@@ -21,6 +22,7 @@ export const GRAPHICS: Record<string, React.FC<{ params?: Record<string, unknown
   EarthEscape: () => <EarthEscape />,
   ScientistLifetime: () => <ScientistLifetime />,
   CoolCrossout: () => <CoolCrossout />,
+  TelescopeFlip: () => <TelescopeFlip />,
 };
 
 export function renderGraphic(

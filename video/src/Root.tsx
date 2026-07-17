@@ -11,7 +11,12 @@ import { EarthEscape } from "./graphics/EarthEscape";
 import { NancyIntro } from "./graphics/NancyIntro";
 import { ScientistLifetime } from "./graphics/ScientistLifetime";
 import { CoolCrossout } from "./graphics/CoolCrossout";
+import { TelescopeFlip } from "./graphics/TelescopeFlip";
 import { NancyGraceRoman } from "./graphics/title/NancyGraceRoman";
+import {
+  Schrodinger,
+  type SchrodingerPose,
+} from "./graphics/characters/Schrodinger";
 import type { EditDoc, SubtitleChunk } from "./types";
 
 const NancyGraceRomanPreview: React.FC = () => (
@@ -26,6 +31,38 @@ const NancyGraceRomanPreview: React.FC = () => (
     }}
   >
     <NancyGraceRoman size={420} speech="Me. I did that $#!%." speechAt={0.5} />
+  </div>
+);
+
+const SCHRO_POSES: { pose: SchrodingerPose; label: string }[] = [
+  { pose: "idle", label: "idle" },
+  { pose: "sneak", label: "sneak" },
+  { pose: "grab", label: "grab" },
+  { pose: "shock", label: "shock" },
+  { pose: "scurry", label: "scurry" },
+  { pose: "idle", label: "idle + fish" },
+];
+
+const SchrodingerPreview: React.FC = () => (
+  <div
+    style={{
+      width: "100%",
+      height: "100%",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      placeItems: "center",
+      background: "#1c2436",
+      color: "#fff",
+      fontFamily: "sans-serif",
+      fontSize: 32,
+    }}
+  >
+    {SCHRO_POSES.map((p, i) => (
+      <div key={i} style={{ textAlign: "center" }}>
+        <Schrodinger size={300} pose={p.pose} holdFish={i === 5} />
+        <div style={{ marginTop: 8 }}>{p.label}</div>
+      </div>
+    ))}
   </div>
 );
 
@@ -190,6 +227,22 @@ export const RemotionRoot: React.FC = () => {
         id="CoolCrossoutPreview"
         component={CoolCrossout}
         durationInFrames={135}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="TelescopeFlipPreview"
+        component={TelescopeFlip}
+        durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="SchrodingerPreview"
+        component={SchrodingerPreview}
+        durationInFrames={180}
         fps={30}
         width={1080}
         height={1920}

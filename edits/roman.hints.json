@@ -181,6 +181,14 @@
       "end": 155.2
     },
     {
+      "id": "telescope-flip",
+      "generator": "TelescopeFlip",
+      "mode": "fullscreen",
+      "match": ["billions of light years", "pointing it the other way"],
+      "start": 168.0,
+      "end": 187.0
+    },
+    {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",
