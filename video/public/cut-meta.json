@@ -1,6 +1,6 @@
 {
   "outPath": "/Users/chris/dev/personal/tokr/build/base.mp4",
-  "duration": 310.16999999999996,
+  "duration": 331.21,
   "segments": [
     {
       "clip": {
@@ -31,12 +31,12 @@
         "id": "c_IMG_7958",
         "asset": "IMG_7958",
         "srcIn": 0,
-        "srcOut": 11.96,
+        "srcOut": 12.7,
         "note": "The sci-fi nerd in me likes to think about like, I don't know, a couple hundred"
       },
       "outStart": 16.799999999999997,
-      "outEnd": 28.759999999999998,
-      "duration": 11.96
+      "outEnd": 29.499999999999996,
+      "duration": 12.7
     },
     {
       "clip": {
@@ -46,8 +46,8 @@
         "srcOut": 14.98,
         "note": "It was a big deal finding any planets at all not too long ago. Now it's, let's f"
       },
-      "outStart": 28.759999999999998,
-      "outEnd": 43.739999999999995,
+      "outStart": 29.499999999999996,
+      "outEnd": 44.48,
       "duration": 14.98
     },
     {
@@ -58,8 +58,8 @@
         "srcOut": 7.74,
         "note": "The Roman Space Telescope is rad as fuck. I'm super excited for it. But what I w"
       },
-      "outStart": 43.739999999999995,
-      "outEnd": 51.48,
+      "outStart": 44.48,
+      "outEnd": 52.22,
       "duration": 7.74
     },
     {
@@ -70,8 +70,8 @@
         "srcOut": 22.4,
         "note": "you know Hubble, James Webb, I mean that's a lifetime for some scientists, right"
       },
-      "outStart": 51.48,
-      "outEnd": 73.88,
+      "outStart": 52.22,
+      "outEnd": 74.62,
       "duration": 22.4
     },
     {
@@ -82,8 +82,8 @@
         "srcOut": 12.18,
         "note": "And the Nancy Grace Roman Telescope's no different, but one thing that is differ"
       },
-      "outStart": 73.88,
-      "outEnd": 86.06,
+      "outStart": 74.62,
+      "outEnd": 86.80000000000001,
       "duration": 12.18
     },
     {
@@ -94,8 +94,8 @@
         "srcOut": 10.96,
         "note": "the National Reconnaissance Office, and they're basically an agency of the, you"
       },
-      "outStart": 86.06,
-      "outEnd": 97.02000000000001,
+      "outStart": 86.80000000000001,
+      "outEnd": 97.76000000000002,
       "duration": 10.96
     },
     {
@@ -106,8 +106,8 @@
         "srcOut": 17.98,
         "note": "NRO doesn't have these same budget problems. They build a whole mess of them and"
       },
-      "outStart": 97.02000000000001,
-      "outEnd": 115.00000000000001,
+      "outStart": 97.76000000000002,
+      "outEnd": 115.74000000000002,
       "duration": 17.98
     },
     {
@@ -118,33 +118,33 @@
         "srcOut": 20.38,
         "note": "Of course, I'm irked because it's like, God, wouldn't it be great if we lived in"
       },
-      "outStart": 115.00000000000001,
-      "outEnd": 135.38000000000002,
+      "outStart": 115.74000000000002,
+      "outEnd": 136.12000000000003,
       "duration": 20.38
     },
     {
       "clip": {
-        "id": "c_IMG_7974a",
-        "asset": "IMG_7974",
+        "id": "c_IMG_7973",
+        "asset": "IMG_7973",
         "srcIn": 0,
-        "srcOut": 12.48,
-        "note": "It's also kind of cool just to think about, maybe cool isn't the right word. So we're talking about an instrument that is probably similar to Hubble."
+        "srcOut": 13.14,
+        "note": "But it's just so ironic, like the dichotomy between, you know, these scientists"
       },
-      "outStart": 135.38000000000002,
-      "outEnd": 147.86,
-      "duration": 12.48
+      "outStart": 136.12000000000003,
+      "outEnd": 149.26000000000005,
+      "duration": 13.14
     },
     {
       "clip": {
-        "id": "c_IMG_7974b",
+        "id": "c_IMG_7974",
         "asset": "IMG_7974",
-        "srcIn": 19.64,
+        "srcIn": 0,
         "srcOut": 34.34,
-        "note": "But something I could see billions of light years away. Except, when the NRO uses it, they're pointing it the other way, staring at us."
+        "note": "It's also kind of cool just to think about, maybe cool isn't the right word. So"
       },
-      "outStart": 147.86,
-      "outEnd": 162.56,
-      "duration": 14.700000000000003
+      "outStart": 149.26000000000005,
+      "outEnd": 183.60000000000005,
+      "duration": 34.34
     },
     {
       "clip": {
@@ -154,8 +154,8 @@
         "srcOut": 22.1,
         "note": "imagine the capabilities of that telescope. It's like looking down at the ground"
       },
-      "outStart": 162.56,
-      "outEnd": 184.66,
+      "outStart": 183.60000000000005,
+      "outEnd": 205.70000000000005,
       "duration": 22.1
     },
     {
@@ -166,8 +166,8 @@
         "srcOut": 19.96,
         "note": "ironically came with a stipulation. They said you can have this telescope but yo"
       },
-      "outStart": 184.66,
-      "outEnd": 203.63,
+      "outStart": 205.70000000000005,
+      "outEnd": 224.67000000000004,
       "duration": 18.970000000000002
     },
     {
@@ -178,8 +178,8 @@
         "srcOut": 17.48,
         "note": "So look, they're looking for planets orbiting these other stars, other suns. The"
       },
-      "outStart": 203.63,
-      "outEnd": 221.10999999999999,
+      "outStart": 224.67000000000004,
+      "outEnd": 242.15000000000003,
       "duration": 17.48
     },
     {
@@ -190,8 +190,8 @@
         "srcOut": 15.94,
         "note": "What they do is they watch that star for a period of time and they measure the b"
       },
-      "outStart": 221.10999999999999,
-      "outEnd": 237.04999999999998,
+      "outStart": 242.15000000000003,
+      "outEnd": 258.09000000000003,
       "duration": 15.94
     },
     {
@@ -202,8 +202,8 @@
         "srcOut": 13.14,
         "note": "by measuring this like dip in brightness and its duration, they can get a sense"
       },
-      "outStart": 237.04999999999998,
-      "outEnd": 250.19,
+      "outStart": 258.09000000000003,
+      "outEnd": 271.23,
       "duration": 13.14
     },
     {
@@ -214,8 +214,8 @@
         "srcOut": 26.08,
         "note": "But not just that, they can also tell things like what atmosphere is on the plan"
       },
-      "outStart": 250.19,
-      "outEnd": 276.27,
+      "outStart": 271.23,
+      "outEnd": 297.31,
       "duration": 26.08
     },
     {
@@ -226,8 +226,8 @@
         "srcOut": 33.9,
         "note": "It's super awesome to think that we have the ability to figure out God knows how"
       },
-      "outStart": 276.27,
-      "outEnd": 310.16999999999996,
+      "outStart": 297.31,
+      "outEnd": 331.21,
       "duration": 33.9
     }
   ]
