@@ -2,12 +2,14 @@ import React from "react";
 import {
   AbsoluteFill,
   interpolate,
+  Sequence,
   spring,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
 import { Earth } from "./planets/Earth";
 import { Schrodinger, Fish } from "./characters/Schrodinger";
+import { CharacterIntro } from "./shared/CharacterIntro";
 
 /**
  * Telescope flip gag (overlay starts 168.0 abs):
@@ -418,6 +420,44 @@ export const TelescopeFlip: React.FC = () => {
         <EyepieceView opacity={eyeOpacity} scale={eyeScale}>
           <StarView t={t} />
         </EyepieceView>
+      )}
+
+      {/* Schrödiner Cat name drop — when we zoom into the house */}
+      {usingB && eyeOpacity > 0.4 && (
+        <Sequence
+          from={Math.round((BEATS.zoomIn2 + 0.25) * fps)}
+          durationInFrames={Math.round(3.5 * fps)}
+          layout="none"
+        >
+          <AbsoluteFill style={{ zIndex: 8, pointerEvents: "none" }}>
+            <CharacterIntro
+              name="Schrödinger D. Katt"
+              nameColor="#c4b5fd"
+              nameFontSize={56}
+              nameX={200}
+              nameY={280}
+              factoids={[
+                {
+                  text: "Loves fish\nand privacy",
+                  delaySec: 0.5,
+                  x: 40,
+                  y: 460,
+                  rotate: -5,
+                  color: "#7fb8d4",
+                },
+                {
+                  text: "Hates nosy\nneighbors",
+                  delaySec: 1.0,
+                  x: 560,
+                  y: 540,
+                  rotate: 4,
+                  color: "#ff6b6b",
+                },
+              ]}
+              fadeOutSec={2.6}
+            />
+          </AbsoluteFill>
+        </Sequence>
       )}
     </AbsoluteFill>
   );

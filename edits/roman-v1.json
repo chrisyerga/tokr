@@ -56,11 +56,6 @@
       "duration": 21.2
     },
     {
-      "id": "IMG_7973",
-      "path": "roman-assets/IMG_7973.MOV",
-      "duration": 13.96
-    },
-    {
       "id": "IMG_7974",
       "path": "roman-assets/IMG_7974.MOV",
       "duration": 35.16
@@ -173,18 +168,18 @@
       "note": "Of course, I'm irked because it's like, God, wouldn't it be great if we lived in"
     },
     {
-      "id": "c_IMG_7973",
-      "asset": "IMG_7973",
-      "srcIn": 0,
-      "srcOut": 13.14,
-      "note": "But it's just so ironic, like the dichotomy between, you know, these scientists"
-    },
-    {
-      "id": "c_IMG_7974",
+      "id": "c_IMG_7974a",
       "asset": "IMG_7974",
       "srcIn": 0,
+      "srcOut": 12.48,
+      "note": "It's also kind of cool just to think about, maybe cool isn't the right word. So we're talking about an instrument that is probably similar to Hubble."
+    },
+    {
+      "id": "c_IMG_7974b",
+      "asset": "IMG_7974",
+      "srcIn": 19.64,
       "srcOut": 34.34,
-      "note": "It's also kind of cool just to think about, maybe cool isn't the right word. So"
+      "note": "But something I could see billions of light years away. Except, when the NRO uses it, they're pointing it the other way, staring at us."
     },
     {
       "id": "c_IMG_7975",
@@ -289,32 +284,32 @@
       "id": "cool-crossout",
       "generator": "CoolCrossout",
       "mode": "overlay",
-      "start": 150.7,
-      "end": 155.2,
+      "start": 137.5,
+      "end": 142.0,
       "params": {}
     },
     {
       "id": "telescope-flip",
       "generator": "TelescopeFlip",
       "mode": "fullscreen",
-      "start": 168.0,
-      "end": 187.0,
+      "start": 147.5,
+      "end": 166.5,
       "params": {}
     },
     {
       "id": "transit",
       "generator": "TransitMethod",
       "mode": "fullscreen",
-      "start": 241.41,
-      "end": 270.49,
+      "start": 221.11,
+      "end": 250.19,
       "params": {}
     },
     {
       "id": "spectroscopy",
       "generator": "Spectroscopy",
       "mode": "fullscreen",
-      "start": 270.49,
-      "end": 296.57,
+      "start": 250.19,
+      "end": 276.27,
       "params": {}
     }
   ],

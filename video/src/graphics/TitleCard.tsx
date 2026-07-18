@@ -10,17 +10,20 @@ import { RomanTelescope } from "./title/RomanTelescope";
 import { SpyCharacter } from "./title/SpyCharacter";
 import { ExoplanetLife } from "./title/ExoplanetLife";
 
-const LINES = [
-  { text: "SPACE TELESCOPE,", color: "#9fd4ff" },
-  { text: "SPY SATELLITE,", color: "#FFD400" },
-  { text: "MULTIPLANETARY LIFE", color: "#8fe3a5" },
-];
+const TITLE_MAIN = [
+  { text: "Turning Space Surveillance", color: "#9fd4ff" },
+  { text: "into Space Exploration.", color: "#8fe3a5" },
+] as const;
+
+const TITLE_SUB =
+  "(Named after a badass lady who loved to knit)";
 
 export const TitleLine: React.FC<{
   text: string;
   color: string;
   delayFrames: number;
-}> = ({ text, color, delayFrames }) => {
+  fontSize?: number;
+}> = ({ text, color, delayFrames, fontSize = 74 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const s = spring({
@@ -33,7 +36,7 @@ export const TitleLine: React.FC<{
       style={{
         fontFamily: '"Montserrat", "Arial Black", Impact, sans-serif',
         fontWeight: 800,
-        fontSize: 74,
+        fontSize,
         lineHeight: 1.12,
         color,
         textAlign: "center",
@@ -114,24 +117,40 @@ export const TitleCard: React.FC = () => {
   );
 };
 
-/** Just the three stacked title lines. */
+/** Just the stacked title lines + subtitle. */
 export const TitleLines: React.FC = () => {
   return (
     <div
       style={{
         position: "absolute",
-        top: 170,
+        top: 140,
         left: 0,
         right: 0,
         display: "flex",
         flexDirection: "column",
-        gap: 10,
+        gap: 8,
         alignItems: "center",
+        padding: "0 36px",
       }}
     >
-      <TitleLine text={LINES[0]!.text} color={LINES[0]!.color} delayFrames={3} />
-      <TitleLine text={LINES[1]!.text} color={LINES[1]!.color} delayFrames={10} />
-      <TitleLine text={LINES[2]!.text} color={LINES[2]!.color} delayFrames={17} />
+      <TitleLine
+        text={TITLE_MAIN[0]!.text}
+        color={TITLE_MAIN[0]!.color}
+        delayFrames={3}
+        fontSize={62}
+      />
+      <TitleLine
+        text={TITLE_MAIN[1]!.text}
+        color={TITLE_MAIN[1]!.color}
+        delayFrames={10}
+        fontSize={62}
+      />
+      <TitleLine
+        text={TITLE_SUB}
+        color="#FFD400"
+        delayFrames={18}
+        fontSize={38}
+      />
     </div>
   );
 };
