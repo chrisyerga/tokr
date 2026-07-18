@@ -1,6 +1,6 @@
 {
   "outPath": "/Users/chris/dev/personal/tokr/build/base.mp4",
-  "duration": 331.21,
+  "duration": 157.02000000000004,
   "segments": [
     {
       "clip": {
@@ -40,26 +40,14 @@
     },
     {
       "clip": {
-        "id": "c_IMG_7959",
-        "asset": "IMG_7959",
-        "srcIn": 0,
-        "srcOut": 14.98,
-        "note": "It was a big deal finding any planets at all not too long ago. Now it's, let's f"
-      },
-      "outStart": 29.499999999999996,
-      "outEnd": 44.48,
-      "duration": 14.98
-    },
-    {
-      "clip": {
         "id": "c_IMG_7960",
         "asset": "IMG_7960",
         "srcIn": 0,
         "srcOut": 7.74,
         "note": "The Roman Space Telescope is rad as fuck. I'm super excited for it. But what I w"
       },
-      "outStart": 44.48,
-      "outEnd": 52.22,
+      "outStart": 29.499999999999996,
+      "outEnd": 37.239999999999995,
       "duration": 7.74
     },
     {
@@ -70,8 +58,8 @@
         "srcOut": 22.4,
         "note": "you know Hubble, James Webb, I mean that's a lifetime for some scientists, right"
       },
-      "outStart": 52.22,
-      "outEnd": 74.62,
+      "outStart": 37.239999999999995,
+      "outEnd": 59.63999999999999,
       "duration": 22.4
     },
     {
@@ -82,8 +70,8 @@
         "srcOut": 12.18,
         "note": "And the Nancy Grace Roman Telescope's no different, but one thing that is differ"
       },
-      "outStart": 74.62,
-      "outEnd": 86.80000000000001,
+      "outStart": 59.63999999999999,
+      "outEnd": 71.82,
       "duration": 12.18
     },
     {
@@ -94,8 +82,8 @@
         "srcOut": 10.96,
         "note": "the National Reconnaissance Office, and they're basically an agency of the, you"
       },
-      "outStart": 86.80000000000001,
-      "outEnd": 97.76000000000002,
+      "outStart": 71.82,
+      "outEnd": 82.78,
       "duration": 10.96
     },
     {
@@ -106,33 +94,9 @@
         "srcOut": 17.98,
         "note": "NRO doesn't have these same budget problems. They build a whole mess of them and"
       },
-      "outStart": 97.76000000000002,
-      "outEnd": 115.74000000000002,
+      "outStart": 82.78,
+      "outEnd": 100.76,
       "duration": 17.98
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7972",
-        "asset": "IMG_7972",
-        "srcIn": 0,
-        "srcOut": 20.38,
-        "note": "Of course, I'm irked because it's like, God, wouldn't it be great if we lived in"
-      },
-      "outStart": 115.74000000000002,
-      "outEnd": 136.12000000000003,
-      "duration": 20.38
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7973",
-        "asset": "IMG_7973",
-        "srcIn": 0,
-        "srcOut": 13.14,
-        "note": "But it's just so ironic, like the dichotomy between, you know, these scientists"
-      },
-      "outStart": 136.12000000000003,
-      "outEnd": 149.26000000000005,
-      "duration": 13.14
     },
     {
       "clip": {
@@ -142,8 +106,8 @@
         "srcOut": 34.34,
         "note": "It's also kind of cool just to think about, maybe cool isn't the right word. So"
       },
-      "outStart": 149.26000000000005,
-      "outEnd": 183.60000000000005,
+      "outStart": 100.76,
+      "outEnd": 135.10000000000002,
       "duration": 34.34
     },
     {
@@ -151,84 +115,12 @@
         "id": "c_IMG_7975",
         "asset": "IMG_7975",
         "srcIn": 0,
-        "srcOut": 22.1,
+        "srcOut": 21.92,
         "note": "imagine the capabilities of that telescope. It's like looking down at the ground"
       },
-      "outStart": 183.60000000000005,
-      "outEnd": 205.70000000000005,
-      "duration": 22.1
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7979",
-        "asset": "IMG_7979",
-        "srcIn": 0.99,
-        "srcOut": 19.96,
-        "note": "ironically came with a stipulation. They said you can have this telescope but yo"
-      },
-      "outStart": 205.70000000000005,
-      "outEnd": 224.67000000000004,
-      "duration": 18.970000000000002
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7982",
-        "asset": "IMG_7982",
-        "srcIn": 0,
-        "srcOut": 17.48,
-        "note": "So look, they're looking for planets orbiting these other stars, other suns. The"
-      },
-      "outStart": 224.67000000000004,
-      "outEnd": 242.15000000000003,
-      "duration": 17.48
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7983",
-        "asset": "IMG_7983",
-        "srcIn": 0,
-        "srcOut": 15.94,
-        "note": "What they do is they watch that star for a period of time and they measure the b"
-      },
-      "outStart": 242.15000000000003,
-      "outEnd": 258.09000000000003,
-      "duration": 15.94
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7984",
-        "asset": "IMG_7984",
-        "srcIn": 0,
-        "srcOut": 13.14,
-        "note": "by measuring this like dip in brightness and its duration, they can get a sense"
-      },
-      "outStart": 258.09000000000003,
-      "outEnd": 271.23,
-      "duration": 13.14
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7988",
-        "asset": "IMG_7988",
-        "srcIn": 0,
-        "srcOut": 26.08,
-        "note": "But not just that, they can also tell things like what atmosphere is on the plan"
-      },
-      "outStart": 271.23,
-      "outEnd": 297.31,
-      "duration": 26.08
-    },
-    {
-      "clip": {
-        "id": "c_IMG_7990",
-        "asset": "IMG_7990",
-        "srcIn": 0,
-        "srcOut": 33.9,
-        "note": "It's super awesome to think that we have the ability to figure out God knows how"
-      },
-      "outStart": 297.31,
-      "outEnd": 331.21,
-      "duration": 33.9
+      "outStart": 135.10000000000002,
+      "outEnd": 157.02000000000004,
+      "duration": 21.92
     }
   ]
 }

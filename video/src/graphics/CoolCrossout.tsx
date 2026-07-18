@@ -13,7 +13,7 @@ import {
  * and "Terrifying?" is written underneath letter by letter.
  */
 
-// Seconds into the overlay (start 150.7 abs):
+// Seconds into the overlay (synced to "maybe cool isn't the right word"):
 // COOL! pops on the "hmm", scribble lands on "isn't" (~152.06 abs),
 // "Terrifying?" writes after "word" (~152.62 abs).
 const T_COOL = 0.15;

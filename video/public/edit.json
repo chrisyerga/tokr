@@ -124,13 +124,6 @@
       "note": "The sci-fi nerd in me likes to think about like, I don't know, a couple hundred"
     },
     {
-      "id": "c_IMG_7959",
-      "asset": "IMG_7959",
-      "srcIn": 0,
-      "srcOut": 14.98,
-      "note": "It was a big deal finding any planets at all not too long ago. Now it's, let's f"
-    },
-    {
       "id": "c_IMG_7960",
       "asset": "IMG_7960",
       "srcIn": 0,
@@ -166,20 +159,6 @@
       "note": "NRO doesn't have these same budget problems. They build a whole mess of them and"
     },
     {
-      "id": "c_IMG_7972",
-      "asset": "IMG_7972",
-      "srcIn": 0,
-      "srcOut": 20.38,
-      "note": "Of course, I'm irked because it's like, God, wouldn't it be great if we lived in"
-    },
-    {
-      "id": "c_IMG_7973",
-      "asset": "IMG_7973",
-      "srcIn": 0,
-      "srcOut": 13.14,
-      "note": "But it's just so ironic, like the dichotomy between, you know, these scientists"
-    },
-    {
       "id": "c_IMG_7974",
       "asset": "IMG_7974",
       "srcIn": 0,
@@ -190,50 +169,8 @@
       "id": "c_IMG_7975",
       "asset": "IMG_7975",
       "srcIn": 0,
-      "srcOut": 22.1,
+      "srcOut": 21.92,
       "note": "imagine the capabilities of that telescope. It's like looking down at the ground"
-    },
-    {
-      "id": "c_IMG_7979",
-      "asset": "IMG_7979",
-      "srcIn": 0.99,
-      "srcOut": 19.96,
-      "note": "ironically came with a stipulation. They said you can have this telescope but yo"
-    },
-    {
-      "id": "c_IMG_7982",
-      "asset": "IMG_7982",
-      "srcIn": 0,
-      "srcOut": 17.48,
-      "note": "So look, they're looking for planets orbiting these other stars, other suns. The"
-    },
-    {
-      "id": "c_IMG_7983",
-      "asset": "IMG_7983",
-      "srcIn": 0,
-      "srcOut": 15.94,
-      "note": "What they do is they watch that star for a period of time and they measure the b"
-    },
-    {
-      "id": "c_IMG_7984",
-      "asset": "IMG_7984",
-      "srcIn": 0,
-      "srcOut": 13.14,
-      "note": "by measuring this like dip in brightness and its duration, they can get a sense"
-    },
-    {
-      "id": "c_IMG_7988",
-      "asset": "IMG_7988",
-      "srcIn": 0,
-      "srcOut": 26.08,
-      "note": "But not just that, they can also tell things like what atmosphere is on the plan"
-    },
-    {
-      "id": "c_IMG_7990",
-      "asset": "IMG_7990",
-      "srcIn": 0,
-      "srcOut": 33.9,
-      "note": "It's super awesome to think that we have the ability to figure out God knows how"
     }
   ],
   "overlays": [
@@ -273,56 +210,32 @@
       "id": "scientist-lifetime",
       "generator": "ScientistLifetime",
       "mode": "overlay",
-      "start": 52.5,
-      "end": 73.5,
-      "params": {}
-    },
-    {
-      "id": "goldilocks",
-      "generator": "Goldilocks",
-      "mode": "overlay",
-      "start": 29.5,
-      "end": 44.48,
+      "start": 37.5,
+      "end": 58.5,
       "params": {}
     },
     {
       "id": "spy-nro",
       "generator": "SpySatellite",
       "mode": "fullscreen",
-      "start": 86.8,
-      "end": 115.74,
+      "start": 71,
+      "end": 100.75,
       "params": {}
     },
     {
       "id": "cool-crossout",
       "generator": "CoolCrossout",
       "mode": "overlay",
-      "start": 149.26,
-      "end": 183.6,
+      "start": 101.5,
+      "end": 106,
       "params": {}
     },
     {
       "id": "telescope-flip",
       "generator": "TelescopeFlip",
       "mode": "fullscreen",
-      "start": 149.26,
-      "end": 183.6,
-      "params": {}
-    },
-    {
-      "id": "transit",
-      "generator": "TransitMethod",
-      "mode": "fullscreen",
-      "start": 242.15,
-      "end": 271.23,
-      "params": {}
-    },
-    {
-      "id": "spectroscopy",
-      "generator": "Spectroscopy",
-      "mode": "fullscreen",
-      "start": 271.23,
-      "end": 297.31,
+      "start": 121,
+      "end": 140,
       "params": {}
     }
   ],
