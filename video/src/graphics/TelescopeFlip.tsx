@@ -2,14 +2,16 @@ import React from "react";
 import {
   AbsoluteFill,
   interpolate,
-  Sequence,
   spring,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
 import { Earth } from "./planets/Earth";
 import { Schrodinger, Fish } from "./characters/Schrodinger";
-import { CharacterIntro } from "./shared/CharacterIntro";
+import { SpyActor } from "./spy/SpyActor";
+
+/** Kitchen window — used for spy peek positioning. */
+const WINDOW = { x: 455, y: 48, w: 420, h: 340 } as const;
 
 /**
  * Telescope flip gag (overlay starts 168.0 abs):
@@ -27,8 +29,12 @@ const BEATS = {
   zoomIn2: 13.5,
   sneak: 14.0,
   grab: 15.0,
-  caught: 15.8,
-  scurry: 16.8,
+  /** Spy slides in outside the window while cat admires the loot. */
+  spyPeek: 16.0,
+  spyPeekDone: 17.0,
+  /** Cat spots the spy → shock flash → bolt. */
+  caught: 17.35,
+  scurry: 18.15,
   // fade before "It's like looking down at the ground" (187.0 abs)
   fadeOut: 18.5,
   fadeDone: 18.95,
@@ -159,6 +165,10 @@ const StarView: React.FC<{ t: number }> = ({ t }) => {
 
 /** View B: warm kitchen — and a cat burglar. */
 const CatView: React.FC<{ t: number }> = ({ t }) => {
+  const { x: wx, y: wy, w: ww, h: wh } = WINDOW;
+  const frameCx = wx + ww / 2;
+  const frameCy = wy + wh / 2;
+
   // Cat choreography (absolute-relative seconds shared with BEATS)
   const sneakX = interpolate(t, [BEATS.sneak, BEATS.grab], [-280, 300], {
     extrapolateLeft: "clamp",
@@ -177,6 +187,15 @@ const CatView: React.FC<{ t: number }> = ({ t }) => {
 
   const fishStolen = t >= BEATS.grab + 0.45;
 
+  // Spy peeks in from outside the window (slides left into frame)
+  const spyPeekP = interpolate(t, [BEATS.spyPeek, BEATS.spyPeekDone], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const spyVisible = t >= BEATS.spyPeek;
+  const spyLeft = interpolate(spyPeekP, [0, 1], [wx + ww + 40, wx + ww - 210]);
+  const spyBob = spyVisible ? Math.sin(t * Math.PI * 2 * 1.2) * 3 : 0;
+
   // Shock: leaps up with a hop
   const jumpP = clamp01((t - BEATS.caught) / 0.5);
   const jumpY = pose === "shock" ? -Math.sin(jumpP * Math.PI) * 150 - 40 : 0;
@@ -192,6 +211,12 @@ const CatView: React.FC<{ t: number }> = ({ t }) => {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+  const caughtLabel = interpolate(
+    t,
+    [BEATS.caught, BEATS.caught + 0.08, BEATS.caught + 0.55],
+    [0, 1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
 
   return (
     <div
@@ -206,20 +231,97 @@ const CatView: React.FC<{ t: number }> = ({ t }) => {
         {Array.from({ length: 8 }).map((_, i) => (
           <rect key={i} x={i * 130} y={0} width={40} height={620} fill="rgba(190,140,90,0.15)" />
         ))}
-        {/* Window to the night sky (the telescope's POV origin!) */}
-        <g transform="translate(590, 120)">
-          <rect x={0} y={0} width={220} height={200} rx={12} fill="#0b1e3a" stroke="#7a5a34" strokeWidth={12} />
-          <line x1={110} y1={0} x2={110} y2={200} stroke="#7a5a34" strokeWidth={8} />
-          <line x1={0} y1={100} x2={220} y2={100} stroke="#7a5a34" strokeWidth={8} />
-          <circle cx={60} cy={54} r={3} fill="#fff" />
-          <circle cx={160} cy={40} r={2.5} fill="#fff" />
-          <circle cx={182} cy={148} r={3} fill="#fff" />
-          <circle cx={40} cy={150} r={2} fill="#fff" />
-        </g>
+
+        {/* Window night sky (behind frame + spy) */}
+        <rect
+          x={wx + 14}
+          y={wy + 14}
+          width={ww - 28}
+          height={wh - 28}
+          rx={8}
+          fill="#0b1e3a"
+        />
+        {[
+          [wx + 72, wy + 58],
+          [wx + ww - 90, wy + 44],
+          [wx + ww - 48, wy + wh - 72],
+          [wx + 56, wy + wh - 58],
+          [wx + ww / 2, wy + wh / 2 - 20],
+          [wx + ww / 2 + 60, wy + wh / 2 + 40],
+        ].map(([cx, cy], i) => (
+          <circle key={i} cx={cx} cy={cy} r={2.5 + (i % 2)} fill="#fff" opacity={0.85} />
+        ))}
+
         {/* Hanging lamp */}
         <line x1={300} y1={0} x2={300} y2={120} stroke="#4a3a26" strokeWidth={7} />
         <path d="M 255 120 L 345 120 L 325 170 L 275 170 Z" fill="#d8a13a" stroke="#8a6a2a" strokeWidth={5} />
         <circle cx={300} cy={178} r={12} fill="#fff2c0" opacity={0.95} />
+      </svg>
+
+      {/* Spy peeking in from outside — between sky and window frame */}
+      {spyVisible && (
+        <div
+          style={{
+            position: "absolute",
+            left: spyLeft,
+            top: wy + 52 + spyBob,
+            width: 240,
+            height: 300,
+            zIndex: 2,
+            overflow: "hidden",
+            transform: "rotate(-6deg)",
+            transformOrigin: "50% 100%",
+          }}
+        >
+          <div style={{ marginTop: 36 }}>
+            <SpyActor size={250} still />
+          </div>
+        </div>
+      )}
+
+      {/* Window frame + mullions (on top of spy) */}
+      <svg
+        width={950}
+        height={950}
+        style={{ position: "absolute", inset: 0, zIndex: 3, pointerEvents: "none" }}
+      >
+        <rect
+          x={wx}
+          y={wy}
+          width={ww}
+          height={wh}
+          rx={14}
+          fill="none"
+          stroke="#7a5a34"
+          strokeWidth={16}
+        />
+        <line
+          x1={frameCx}
+          y1={wy + 10}
+          x2={frameCx}
+          y2={wy + wh - 10}
+          stroke="#7a5a34"
+          strokeWidth={10}
+        />
+        <line
+          x1={wx + 10}
+          y1={frameCy}
+          x2={wx + ww - 10}
+          y2={frameCy}
+          stroke="#7a5a34"
+          strokeWidth={10}
+        />
+        {/* Sill ledge */}
+        <rect
+          x={wx - 18}
+          y={wy + wh - 8}
+          width={ww + 36}
+          height={22}
+          rx={6}
+          fill="#6a4a28"
+          stroke="#4a3a26"
+          strokeWidth={5}
+        />
       </svg>
 
       {/* Dinner table */}
@@ -284,6 +386,27 @@ const CatView: React.FC<{ t: number }> = ({ t }) => {
             })}
           </g>
         </svg>
+      )}
+      {caughtLabel > 0 && (
+        <div
+          style={{
+            position: "absolute",
+            left: 180,
+            top: 380,
+            zIndex: 5,
+            opacity: caughtLabel,
+            transform: `scale(${0.85 + caughtLabel * 0.2}) rotate(-4deg)`,
+            fontFamily: '"Montserrat", "Arial Black", Impact, sans-serif',
+            fontWeight: 900,
+            fontSize: 88,
+            color: "#ff3b3b",
+            letterSpacing: "0.04em",
+            textShadow:
+              "6px 0 #000, -6px 0 #000, 0 6px #000, 0 -6px #000, 5px 5px #000, -5px -5px #000",
+          }}
+        >
+          CAUGHT!
+        </div>
       )}
       <div
         style={{
@@ -422,43 +545,6 @@ export const TelescopeFlip: React.FC = () => {
         </EyepieceView>
       )}
 
-      {/* Schrödiner Cat name drop — when we zoom into the house */}
-      {usingB && eyeOpacity > 0.4 && (
-        <Sequence
-          from={Math.round((BEATS.zoomIn2 + 0.25) * fps)}
-          durationInFrames={Math.round(3.5 * fps)}
-          layout="none"
-        >
-          <AbsoluteFill style={{ zIndex: 8, pointerEvents: "none" }}>
-            <CharacterIntro
-              name="Schrödinger D. Katt"
-              nameColor="#c4b5fd"
-              nameFontSize={56}
-              nameX={200}
-              nameY={280}
-              factoids={[
-                {
-                  text: "Loves fish\nand privacy",
-                  delaySec: 0.5,
-                  x: 40,
-                  y: 460,
-                  rotate: -5,
-                  color: "#7fb8d4",
-                },
-                {
-                  text: "Hates nosy\nneighbors",
-                  delaySec: 1.0,
-                  x: 560,
-                  y: 540,
-                  rotate: 4,
-                  color: "#ff6b6b",
-                },
-              ]}
-              fadeOutSec={2.6}
-            />
-          </AbsoluteFill>
-        </Sequence>
-      )}
     </AbsoluteFill>
   );
 };

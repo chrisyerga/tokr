@@ -2,7 +2,6 @@ import React from "react";
 import {
   AbsoluteFill,
   interpolate,
-  Sequence,
   spring,
   useCurrentFrame,
   useVideoConfig,
@@ -15,7 +14,6 @@ import { UncleClam } from "./spy/UncleClam";
 import { MoneyPile } from "./spy/MoneyPile";
 import { NasaScientist, SCIENTIST_CAST } from "./spy/NasaScientist";
 import { SpyActor, type SpyPose } from "./spy/SpyActor";
-import { CharacterIntro } from "./shared/CharacterIntro";
 
 /** Relative beat markers (seconds into overlay @ 86.06 abs). */
 const BEATS = {
@@ -132,7 +130,6 @@ export const SpySatellite: React.FC = () => {
         extrapolateRight: "clamp",
       })
     : 0;
-
   // Spy pose: frantic catch/toss alternation while ejections rain down
   let spyPose: SpyPose = "idle";
   const catching = EJECTIONS.some((at) => t >= at + 0.65 && t < at + 0.95);
@@ -303,41 +300,6 @@ export const SpySatellite: React.FC = () => {
           <UncleClam size={250} gobble={gobble} racing />
         </div>
       )}
-
-      {/* Uncle Clam name drop + factoids */}
-      <Sequence
-        from={Math.round(BEATS.clam * fps)}
-        durationInFrames={Math.round(3.8 * fps)}
-        layout="none"
-      >
-        <AbsoluteFill style={{ zIndex: 6, pointerEvents: "none" }}>
-          <CharacterIntro
-          name="UNCLE CLAM"
-          nameColor="#d8a13a"
-          nameX={220}
-          nameY={100}
-          factoids={[
-            {
-              text: "Gobbles cash!",
-              delaySec: 0.45,
-              x: 30,
-              y: 320,
-              rotate: -6,
-              color: "#7ee787",
-            },
-            {
-              text: "Poops out\nsatellites",
-              delaySec: 0.95,
-              x: 560,
-              y: 420,
-              rotate: 5,
-              color: "#ff9f43",
-            },
-          ]}
-          fadeOutSec={2.8}
-          />
-        </AbsoluteFill>
-      </Sequence>
 
       {/* Sats ejected from the clam raining down on the spy */}
       {EJECTIONS.map((at, i) => (
