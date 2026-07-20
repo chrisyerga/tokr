@@ -99,6 +99,16 @@
       "id": "IMG_7990",
       "path": "roman-assets/IMG_7990.MOV",
       "duration": 34.72
+    },
+    {
+      "id": "IMG_7991",
+      "path": "roman-assets/IMG_7991.MOV",
+      "duration": 26.97
+    },
+    {
+      "id": "IMG_7992",
+      "path": "roman-assets/IMG_7992.MOV",
+      "duration": 25.74
     }
   ],
   "timeline": [
@@ -171,6 +181,20 @@
       "srcIn": 0,
       "srcOut": 21.92,
       "note": "imagine the capabilities of that telescope. It's like looking down at the ground"
+    },
+    {
+      "id": "c_IMG_7991",
+      "asset": "IMG_7991",
+      "srcIn": 0,
+      "srcOut": 18.1,
+      "note": "Credits pt1 — trail selfie; cameras everywhere bro; frisbee golf"
+    },
+    {
+      "id": "c_IMG_7992",
+      "asset": "IMG_7992",
+      "srcIn": 0,
+      "srcOut": 13.9,
+      "note": "Credits pt2 — squirrel; I'm watching you → I know where you live"
     }
   ],
   "overlays": [
@@ -236,6 +260,14 @@
       "mode": "fullscreen",
       "start": 121,
       "end": 140,
+      "params": {}
+    },
+    {
+      "id": "end-credits",
+      "generator": "EndCredits",
+      "mode": "overlay",
+      "start": 157.5,
+      "end": 188.5,
       "params": {}
     }
   ],

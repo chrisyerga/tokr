@@ -14,9 +14,8 @@ export type ScientistVariant = {
 };
 
 export const SCIENTIST_CAST: ScientistVariant[] = [
-  { skin: "#f0c8a0", skinStroke: "#9c7350", hair: "#2a1f18", hairStyle: "short" },
-  { skin: "#c68642", skinStroke: "#7a4a28", hair: "#1a1210", hairStyle: "bun", skirt: true },
-  { skin: "#8d5524", skinStroke: "#5a3518", hair: "#0d0a08", hairStyle: "afro" },
+  { skin: "#f0c8a0", skinStroke: "#9c7350", hair: "#e2bc6e", hairStyle: "short" },
+  { skin: "#c68642", skinStroke: "#7a4a28", hair: "#6b3a2a", hairStyle: "bun", skirt: true },
   { skin: "#f5d0b0", skinStroke: "#b08060", hair: "#6b3a2a", hairStyle: "ponytail", skirt: true },
   { skin: "#d4a574", skinStroke: "#8a5f3a", hair: "#3a2a20", hairStyle: "balding" },
 ];
@@ -137,7 +136,7 @@ const Hair: React.FC<{ style: ScientistVariant["hairStyle"]; color: string }> = 
       return (
         <>
           <ellipse cx={80} cy={28} rx={34} ry={22} fill={color} />
-          <circle cx={80} cy={10} r={14} fill={color} stroke="#1a1210" strokeWidth={2} />
+          <circle cx={80} cy={10} r={14} fill={color} stroke="#4a2318" strokeWidth={2} />
         </>
       );
     case "ponytail":

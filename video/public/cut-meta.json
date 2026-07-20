@@ -1,6 +1,6 @@
 {
   "outPath": "/Users/chris/dev/personal/tokr/build/base.mp4",
-  "duration": 157.02000000000004,
+  "duration": 189.02000000000004,
   "segments": [
     {
       "clip": {
@@ -121,6 +121,30 @@
       "outStart": 135.10000000000002,
       "outEnd": 157.02000000000004,
       "duration": 21.92
+    },
+    {
+      "clip": {
+        "id": "c_IMG_7991",
+        "asset": "IMG_7991",
+        "srcIn": 0,
+        "srcOut": 18.1,
+        "note": "Credits pt1 — trail selfie; cameras everywhere bro; frisbee golf"
+      },
+      "outStart": 157.02000000000004,
+      "outEnd": 175.12000000000003,
+      "duration": 18.1
+    },
+    {
+      "clip": {
+        "id": "c_IMG_7992",
+        "asset": "IMG_7992",
+        "srcIn": 0,
+        "srcOut": 13.9,
+        "note": "Credits pt2 — squirrel; I'm watching you → I know where you live"
+      },
+      "outStart": 175.12000000000003,
+      "outEnd": 189.02000000000004,
+      "duration": 13.9
     }
   ]
 }

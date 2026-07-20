@@ -13,6 +13,8 @@ import { remapAllWords } from "./remap.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../..");
 
+const CENSOR_WORDS = ["fuck", "shit", "cunt", "bitch", "motherfucker", "mutherfucker"];
+
 function extractWords(transcript: unknown): Word[] {
   const parsed = TranscriptSchema.parse(transcript);
   const words: Word[] = [];
@@ -63,11 +65,18 @@ export function chunkWords(
     chunks.push({
       start: current[0]!.start,
       end: current[current.length - 1]!.end,
-      words: current.map((w) => ({
-        text: w.word.replace(/^[^\w']+|[^\w']+$/g, "") || w.word,
-        start: w.start,
-        end: w.end,
-      })),
+      words: current.map((w) => {
+        const text = w.word.replace(/^[^\w']+|[^\w']+$/g, "") || w.word;
+        return {
+          text,
+          start: w.start,
+          end: w.end,
+          // The renderer (KaraokeSubtitles) reads censor per word
+          ...(CENSOR_WORDS.includes(text.toLowerCase())
+            ? { censor: true }
+            : {}),
+        };
+      }),
     });
     current = [];
   };

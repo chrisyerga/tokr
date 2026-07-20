@@ -12,6 +12,7 @@ import { NancyIntro } from "./graphics/NancyIntro";
 import { ScientistLifetime } from "./graphics/ScientistLifetime";
 import { CoolCrossout } from "./graphics/CoolCrossout";
 import { TelescopeFlip } from "./graphics/TelescopeFlip";
+import { EndCredits } from "./graphics/EndCredits";
 import { NancyGraceRoman } from "./graphics/title/NancyGraceRoman";
 import {
   Schrodinger,
@@ -235,6 +236,14 @@ export const RemotionRoot: React.FC = () => {
         id="TelescopeFlipPreview"
         component={TelescopeFlip}
         durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="EndCreditsPreview"
+        component={EndCredits}
+        durationInFrames={930}
         fps={30}
         width={1080}
         height={1920}

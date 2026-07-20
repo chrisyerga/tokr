@@ -389,9 +389,8 @@ export const SpySatellite: React.FC = () => {
           )}
           {[
             { v: SCIENTIST_CAST[0]!, x: 120, delay: 0 },
-            { v: SCIENTIST_CAST[2]!, x: 620, delay: 4 },
-            { v: SCIENTIST_CAST[3]!, x: 780, delay: 8 },
-            { v: SCIENTIST_CAST[4]!, x: 40, delay: 10 },
+            { v: SCIENTIST_CAST[2]!, x: 780, delay: 4 },
+            { v: SCIENTIST_CAST[3]!, x: 40, delay: 8 },
           ].map((c, i) => {
             const pop = spring({
               frame: Math.max(0, frame - (BEATS.nasa + 2.3) * fps - c.delay),
